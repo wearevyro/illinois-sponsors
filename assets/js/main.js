@@ -5,7 +5,7 @@
 
 // ── GAS CONFIG ──
 // Replace with your deployed Google Apps Script Web App URL
-const GAS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwC1CJqNYm_1gQSGCL10nvQwMXoD6CzmIZ6RD80FBeI5zPqFVR_VzgbOFcr0otXI_2Q/exec';
 
 const DEMO_CREDENTIALS = [
   { email: 'demo@raisingcanes.com',    code: 'RC2026',  name: "Raising Cane's Team", tier: 'Gold',      company: "Raising Cane's"   },
