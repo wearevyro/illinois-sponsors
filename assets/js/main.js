@@ -9,10 +9,36 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbwC1CJqNYm_1gQSGCL10nvQ
 // ── DOM READY ──
 document.addEventListener('DOMContentLoaded', () => {
   setActiveNav();
+  initMobileNav();
   initReveal();
   buildFAQ();
   buildLegalPages();
 });
+
+// ── MOBILE NAV ──
+function initMobileNav() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  const links = nav.querySelector('.nav-links');
+  const right = nav.querySelector('.nav-right');
+  if (!links) return;
+  const btn = document.createElement('button');
+  btn.className = 'nav-toggle';
+  btn.setAttribute('aria-label', 'Toggle menu');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = '<span></span>';
+  if (right) nav.insertBefore(btn, right); else nav.appendChild(btn);
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // ── ACTIVE NAV ──
 function setActiveNav() {
