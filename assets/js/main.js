@@ -16,12 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
   buildLegalPages();
 });
 
-// ── ACQUIRED BANNER ──
+// ── ACQUIRED BANNER (fallback — usually baked into HTML) ──
 function injectAcquiredBanner() {
   if (document.querySelector('.acquired-banner')) return;
-  const banner = document.createElement('div');
+  const banner = document.createElement('a');
   banner.className = 'acquired-banner';
-  banner.innerHTML = 'Newly acquired by <a href="https://wearevyro.org" target="_blank" rel="noopener">Vyro Companies™</a>';
+  banner.href = 'https://wearevyro.org';
+  banner.target = '_blank';
+  banner.rel = 'noopener';
+  banner.innerHTML = '<span class="ab-pulse"></span><span class="ab-text">Newly Acquired By <strong>Vyro Companies&trade;</strong></span><span class="ab-arrow">&rarr;</span>';
   document.body.insertBefore(banner, document.body.firstChild);
 }
 
