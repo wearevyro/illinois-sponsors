@@ -397,6 +397,61 @@ body { font-family: var(--font); background: var(--void); color: var(--ink-text)
   .sec-h2 { font-size: clamp(24px,7vw,36px); }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   INLINE-STYLE OVERRIDES — many pages have inline styles with
+   hardcoded desktop grids and padding. !important is required to
+   beat inline-style specificity at mobile widths.
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 820px) {
+  /* Any inline grid with 2/3/4 columns collapses to a single column */
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns:repeat(4"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1px !important;
+  }
+
+  /* Strip giant desktop padding pattern "padding:80px 72px" etc. */
+  [style*="padding:80px 72px"],
+  [style*="padding: 80px 72px"],
+  [style*="padding:64px 72px"],
+  [style*="padding: 64px 72px"],
+  [style*="padding:52px 48px"],
+  [style*="padding: 52px 48px"],
+  [style*="padding:52px 44px"],
+  [style*="padding:48px 44px"],
+  [style*="padding:40px 48px"],
+  [style*="padding:40px 36px"],
+  [style*="padding:40px"],
+  [style*="padding: 40px"],
+  [style*="padding:52px"] {
+    padding: 32px 20px !important;
+  }
+
+  /* Kill desktop-only right-borders that create awkward dividers when stacked */
+  [style*="border-right:1px solid"] {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  /* Long inline form inputs — make them readable on mobile */
+  [style*="font-size:13px"] input,
+  [style*="font-size:13px"] textarea,
+  [style*="font-size:13px"] select {
+    font-size: 16px !important;
+  }
+}
+
+/* Patch lingering dark-color references in inline styles */
+[style*="color:var(--white)"],
+[style*="color: var(--white)"] { color: var(--ink-text) !important; }
+
 /* Hard guarantee: never invert based on system preference */
 @media (prefers-color-scheme: dark) {
   :root {
