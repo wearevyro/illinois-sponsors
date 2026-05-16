@@ -1,5 +1,5 @@
 # Illinois Sponsors™
-### Powered by Vyro Companies™
+### Newly Acquired By Vyro Companies™
 
 Official sponsorship network connecting brands to Illinois schools through the power of athletics.
 

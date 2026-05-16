@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════
 // Illinois Sponsors — main.js
-// Powered by Vyro Companies™
+// Newly Acquired By Vyro Companies™
 // ═══════════════════════════════════════════════════════════════
 
 // ── GAS INQUIRY ENDPOINT ──
