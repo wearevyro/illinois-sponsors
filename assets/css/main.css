@@ -28,8 +28,8 @@ html { -webkit-text-size-adjust: 100%; }
   --font: 'Montserrat', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: var(--font); background: var(--void); color: var(--ink-text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; background-color: #13243F; }
+body { font-family: var(--font); background-color: #13243F; background: #13243F; color: #ffffff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* ── ACQUIRED BANNER ── */
 .acquired-banner {
