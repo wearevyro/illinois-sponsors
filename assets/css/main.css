@@ -19,7 +19,7 @@ html { -webkit-text-size-adjust: 100%; }
   --dim: rgba(255,255,255,0.72);
   --faint: rgba(255,255,255,0.48);
   --ghost: rgba(255,255,255,0.05);
-  --hover-bg: rgba(255,255,255,0.05);
+  --hover-bg: rgba(255,255,255,0.09);
   --blue: #F47920;
   --blue-bright: #a8bed4;
   --blue-dim: rgba(168,190,212,0.12);
@@ -147,7 +147,7 @@ body { font-family: var(--font); background: var(--void); color: var(--ink-text)
 .s-cell:hover::after { transform: scaleX(1); }
 .s-idx { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-bottom: 20px; }
 .s-num { font-size: 68px; font-weight: 900; letter-spacing: -4px; color: var(--ink-text); line-height: 1; margin-bottom: 12px; }
-.s-num em { font-style: normal; color: var(--blue-bright); }
+.s-num em { font-style: normal; color: var(--ink-text); }
 .s-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
 .s-note { font-size: 11px; font-weight: 400; color: var(--faint); line-height: 1.7; max-width: 200px; margin: 0 auto; }
 
@@ -180,7 +180,7 @@ body { font-family: var(--font); background: var(--void); color: var(--ink-text)
 .v-cell { background: var(--panel); padding: 52px 32px; text-align: center; transition: background 0.3s; }
 .v-cell:hover { background: var(--hover-bg); }
 .v-big { font-size: 48px; font-weight: 900; letter-spacing: -2.5px; color: var(--ink-text); line-height: 1; margin-bottom: 10px; }
-.v-big em { font-style: normal; color: var(--blue-bright); }
+.v-big em { font-style: normal; color: var(--ink-text); }
 .v-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
 .v-desc { font-size: 11px; font-weight: 400; color: var(--dim); line-height: 1.7; }
 
