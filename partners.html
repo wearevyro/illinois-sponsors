@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners — Illinois Sponsors™ · Building What's Next.</title>
+<meta name="description" content="Illinois Sponsors works with schools, sports organizations, entertainment venues, media properties, and community initiatives across Illinois. Explore our full partner network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+/* ── PARTNER TYPE TABS ── */
+.pt-tabs { background: var(--surface); border-bottom: 1px solid var(--line); padding: 0 72px; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+.pt-tabs::-webkit-scrollbar { display: none; }
+.pt-tab { background: none; border: none; border-bottom: 2px solid transparent; color: var(--faint); font-family: var(--font); font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 20px 28px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; flex-shrink: 0; }
+.pt-tab:hover { color: var(--ink-text); }
+.pt-tab.active { color: var(--ink-text); border-bottom-color: var(--orange); }
+.pt-panel { display: none; }
+.pt-panel.active { display: block; }
+
+/* ── SPORT / EVENT GRID ── */
+.coverage-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); }
+.cov-cell { background: var(--ink); padding: 36px 32px; transition: background 0.25s; }
+.cov-cell:hover { background: #111a2a; }
+.cov-ico { width: 40px; height: 40px; border: 1px solid var(--line2); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.cov-ico svg { width: 18px; height: 18px; stroke: #a8bed4; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.cov-name { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
+.cov-meta { font-size: 10px; font-weight: 400; color: var(--faint); line-height: 1.6; }
+.cov-tag { display: inline-block; margin-top: 12px; font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); }
+
+/* ── PARTNER LIST ── */
+.partner-list { display: flex; flex-direction: column; }
+.partner-row { display: grid; grid-template-columns: 48px 1fr 1fr auto; align-items: center; gap: 32px; padding: 24px 72px; border-bottom: 1px solid var(--line); transition: background 0.2s; }
+.partner-row:hover { background: var(--mist); }
+.partner-num { font-size: 9px; font-weight: 700; letter-spacing: 2px; color: var(--faint); }
+.partner-name { font-size: 14px; font-weight: 800; color: var(--ink-text); }
+.partner-type { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); }
+.partner-tag { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); border: 1px solid rgba(244,121,32,0.25); padding: 5px 12px; white-space: nowrap; }
+
+/* ── EVENTS LIST ── */
+.events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); }
+.ev-cell { background: var(--panel); padding: 40px 36px; }
+.ev-num { font-size: 9px; font-weight: 700; letter-spacing: 2px; color: var(--faint); margin-bottom: 18px; }
+.ev-name { font-size: 16px; font-weight: 900; letter-spacing: -0.3px; color: var(--ink-text); margin-bottom: 10px; }
+.ev-desc { font-size: 12px; font-weight: 400; color: var(--dim); line-height: 1.8; }
+.ev-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.ev-pill { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); border: 1px solid var(--line); padding: 5px 10px; }
+
+/* ── STATS ROW — white bg version ── */
+.stats-white { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.sw-cell { background: var(--panel); padding: 52px 40px; text-align: center; }
+.sw-num { font-size: 56px; font-weight: 900; letter-spacing: -3px; color: var(--ink-text); line-height: 1; margin-bottom: 8px; }
+.sw-num em { font-style: normal; color: var(--orange); }
+.sw-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); }
+
+@media (max-width: 1100px) {
+  .pt-tabs { padding: 0 40px; }
+  .coverage-grid { grid-template-columns: repeat(3,1fr); }
+  .events-grid { grid-template-columns: repeat(2,1fr); }
+  .partner-row { padding: 20px 40px; grid-template-columns: 40px 1fr 1fr; }
+  .partner-row .partner-tag { display: none; }
+}
+@media (max-width: 820px) {
+  .pt-tabs { padding: 0 20px; }
+  .coverage-grid { grid-template-columns: repeat(2,1fr); }
+  .events-grid { grid-template-columns: 1fr; }
+  .partner-row { padding: 18px 20px; grid-template-columns: 32px 1fr; gap: 16px; }
+  .partner-row .partner-type, .partner-row .partner-tag { display: none; }
+  .stats-white { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+<div class="util"><strong>Illinois Sponsors</strong><span>A Vyro Companies™ · Sports, Media &amp; Entertainment</span><strong>partners@wearevyro.com</strong></div>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="news.html">News &amp; Activations</a></li>
+    <li><a href="partners.html" class="active">Partners</a></li>
+    <li><a href="catalog.html">Catalog</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" class="btn-blue" onclick="openModal('general');return false;">Become a Sponsor</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-over">The Network</div>
+  <div class="page-hero-rule"></div>
+  <h1 class="page-hero-h1">Our<br><span class="thin">Partners.</span></h1>
+  <p class="page-hero-sub">Illinois Sponsors works with schools, sports organizations, entertainment venues, media properties, and community initiatives across the state — building a network that connects brands to real Illinois audiences at every level.</p>
+</div>
+
+<!-- Stats -->
+<div class="stats-white reveal">
+  <div class="sw-cell"><div class="sw-num">79<em>+</em></div><div class="sw-label">Events per Year</div></div>
+  <div class="sw-cell"><div class="sw-num">12<em>+</em></div><div class="sw-label">Sports &amp; Disciplines</div></div>
+  <div class="sw-cell"><div class="sw-num">50K<em>+</em></div><div class="sw-label">Annual Live Attendees</div></div>
+  <div class="sw-cell"><div class="sw-num">100K<em>+</em></div><div class="sw-label">Annual Impressions</div></div>
+</div>
+
+<!-- Partner type tabs -->
+<div class="pt-tabs" id="pt-tabs">
+  <button class="pt-tab active" data-panel="schools">Schools</button>
+  <button class="pt-tab" data-panel="sports">Sports Covered</button>
+  <button class="pt-tab" data-panel="events">Events Covered</button>
+  <button class="pt-tab" data-panel="entertainment">Entertainment</button>
+  <button class="pt-tab" data-panel="media">Media</button>
+  <button class="pt-tab" data-panel="community">Community</button>
+</div>
+
+<!-- ── SCHOOLS ── -->
+<div class="pt-panel active" id="panel-schools">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">School Network</div>
+        <div class="sec-h2">School <span class="thin">Partners</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:400px">Illinois Sponsors works directly with high school athletic programs across the state — bringing brand partnerships that generate revenue, visibility, and community investment.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-bottom:1px">
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">01</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Revenue for Athletics</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Sponsorship fees flow directly toward supporting athletic programs — covering equipment, travel, uniforms, and operational costs that school budgets often cannot fully fund on their own.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">02</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Zero Administrative Burden</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Vyro handles all creative coordination, installation, partner management, and reporting — so athletic directors and school administrators have no operational burden from the sponsorship program.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">03</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Community Investment</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Sponsors participate in student-focused initiatives, recognition programs, and community events that create lasting impact — extending the relationship well beyond game day signage.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)">
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">04</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">NIL Program Support</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">For eligible schools and athletes, Illinois Sponsors connects student-athletes with compliant NIL partnership opportunities — building pathways to brand relationships that extend beyond high school.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">05</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Scholarship &amp; Award Programs</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Brand-named scholarship and recognition programs give sponsors a visible, meaningful way to invest in students — recognized at events, in school communications, and across social channels.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">06</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Multi-School Network Access</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">One sponsorship relationship can activate across multiple schools in our network simultaneously — maximizing reach across different communities, districts, and demographics throughout Illinois.</p>
+      </div>
+    </div>
+  </section>
+  <section class="sec alt" style="padding-top:48px;padding-bottom:48px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <div class="sec-over">Join the Network</div>
+        <div class="sec-h2" style="margin-bottom:0">Is Your School <span class="thin">a Fit?</span></div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#" class="btn-hero-blue" onclick="openModal('general');return false;" style="display:inline-flex">Inquire for Your School</a>
+        <a href="contact.html" class="btn-hero-void" style="display:inline-flex">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── SPORTS COVERED ── -->
+<div class="pt-panel" id="panel-sports">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">Coverage</div>
+        <div class="sec-h2">Sports <span class="thin">We Cover</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:400px">From major varsity programs to individual-sport events and tournaments, Illinois Sponsors builds partnerships across every sport we touch.</p>
+    </div>
+  </section>
+  <div class="coverage-grid" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="7"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 5a15 15 0 0 1 0 14M12 5a15 15 0 0 0 0 14"/></svg></div>
+      <div class="cov-name">Football</div>
+      <div class="cov-meta">Varsity · JV · Playoffs · All-Star Games</div>
+      <span class="cov-tag">9+ events/yr · 5,000+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2C6 6 6 18 12 22M12 2c6 4 6 16 0 20M2 12h20"/></svg></div>
+      <div class="cov-name">Basketball</div>
+      <div class="cov-meta">Boys &amp; Girls · Varsity · Tournaments · Showcases</div>
+      <span class="cov-tag">32+ events/yr · 2,000+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M5 8c2 1 4 1 7 0s5-1 7 0M5 16c2-1 4-1 7 0s5 1 7 0"/></svg></div>
+      <div class="cov-name">Soccer</div>
+      <div class="cov-meta">Boys &amp; Girls · Varsity · Club · Invitational</div>
+      <span class="cov-tag">20+ events/yr · 1,500+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><path d="M5 19l2-7 5-10 5 10 2 7"/><line x1="4" y1="14" x2="20" y2="14"/></svg></div>
+      <div class="cov-name">Track &amp; Field</div>
+      <div class="cov-meta">Indoor &amp; Outdoor · Relays · Invitationals</div>
+      <span class="cov-tag">8+ events/yr · 1,000+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="10" rx="1"/><line x1="8" y1="8" x2="8" y2="4"/><line x1="16" y1="8" x2="16" y2="4"/><line x1="4" y1="13" x2="20" y2="13"/></svg></div>
+      <div class="cov-name">Volleyball</div>
+      <div class="cov-meta">Girls Varsity · Tournaments · Playoffs</div>
+      <span class="cov-tag">12+ events/yr · 800+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><path d="M12 2L4 9v11h5v-6h6v6h5V9z"/></svg></div>
+      <div class="cov-name">Baseball &amp; Softball</div>
+      <div class="cov-meta">Varsity · Regional · State Qualifying</div>
+      <span class="cov-tag">14+ events/yr · 600+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg></div>
+      <div class="cov-name">Wrestling</div>
+      <div class="cov-meta">Dual Meets · Invitationals · Regional Championships</div>
+      <span class="cov-tag">6+ events/yr · 500+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><path d="M12 2c-2 4-6 6-8 10a8 8 0 0 0 16 0c-2-4-6-6-8-10z"/></svg></div>
+      <div class="cov-name">Swimming &amp; Diving</div>
+      <div class="cov-meta">Invitationals · Sectionals · State Qualifiers</div>
+      <span class="cov-tag">4+ events/yr · 400+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><circle cx="17" cy="18" r="3"/><path d="M17 15V7l-10 4"/><circle cx="7" cy="11" r="3"/></svg></div>
+      <div class="cov-name">Cross Country</div>
+      <div class="cov-meta">Invitationals · Regional Meets · State</div>
+      <span class="cov-tag">4+ events/yr · 600+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></div>
+      <div class="cov-name">Tennis</div>
+      <div class="cov-meta">Singles &amp; Doubles · Sectionals · State</div>
+      <span class="cov-tag">4+ events/yr · 300+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg></div>
+      <div class="cov-name">Cheer &amp; Dance</div>
+      <div class="cov-meta">Competitions · Showcases · State Events</div>
+      <span class="cov-tag">5+ events/yr · 800+ attendance</span>
+    </div>
+
+    <div class="cov-cell">
+      <div class="cov-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+      <div class="cov-name">Multi-Sport Tournaments</div>
+      <div class="cov-meta">Showcases · Invitationals · Championship Events</div>
+      <span class="cov-tag">10+ events/yr · 3,000+ attendance</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── EVENTS COVERED ── -->
+<div class="pt-panel" id="panel-events">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">Event Types</div>
+        <div class="sec-h2">Events <span class="thin">We Cover</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:400px">Illinois Sponsors activates across sports, entertainment, and community — every event type is an opportunity for brand visibility, community connection, and cultural engagement.</p>
+    </div>
+  </section>
+  <div class="events-grid" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+
+    <div class="ev-cell">
+      <div class="ev-num">01</div>
+      <div class="ev-name">Game Days &amp; Athletic Events</div>
+      <div class="ev-desc">Varsity and JV game days across all sports — the highest-frequency, highest-attendance touchpoints in any school or sports organization calendar.</div>
+      <div class="ev-pills"><span class="ev-pill">Football</span><span class="ev-pill">Basketball</span><span class="ev-pill">Soccer</span><span class="ev-pill">All Sports</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">02</div>
+      <div class="ev-name">Tournaments &amp; Invitationals</div>
+      <div class="ev-desc">Multi-team and multi-school tournaments that draw large attendance across a single day or weekend — concentrated exposure with broad geographic reach across Illinois communities.</div>
+      <div class="ev-pills"><span class="ev-pill">Multi-Team</span><span class="ev-pill">Weekend Events</span><span class="ev-pill">High Attendance</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">03</div>
+      <div class="ev-name">Showcases &amp; Combines</div>
+      <div class="ev-desc">Athlete-focused events that draw scouts, coaches, families, and media — high-profile moments in the recruiting calendar that place brand visibility at a pivotal intersection of sports and opportunity.</div>
+      <div class="ev-pills"><span class="ev-pill">Recruiting</span><span class="ev-pill">Scouts</span><span class="ev-pill">Media Coverage</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">04</div>
+      <div class="ev-name">Concerts &amp; Live Music</div>
+      <div class="ev-desc">Live music events and concerts across Illinois — from emerging artists to established talent. Brand placement at the intersection of entertainment, culture, and community gathering.</div>
+      <div class="ev-pills"><span class="ev-pill">Live Music</span><span class="ev-pill">Emerging Artists</span><span class="ev-pill">Venue Branding</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">05</div>
+      <div class="ev-name">Cultural Festivals</div>
+      <div class="ev-desc">Arts, cultural, and community festivals across Illinois that draw diverse, engaged audiences. Deep community association and broad demographic reach that extends beyond the sports calendar.</div>
+      <div class="ev-pills"><span class="ev-pill">Arts</span><span class="ev-pill">Culture</span><span class="ev-pill">Community</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">06</div>
+      <div class="ev-name">Award Ceremonies &amp; Galas</div>
+      <div class="ev-desc">Recognition events, award nights, and formal celebrations honoring athletes, entertainers, and community leaders. High-prestige placement in moments built for photography, press, and lasting memory.</div>
+      <div class="ev-pills"><span class="ev-pill">Recognition</span><span class="ev-pill">Press Coverage</span><span class="ev-pill">Red Carpet</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">07</div>
+      <div class="ev-name">Community Outreach Days</div>
+      <div class="ev-desc">Neighborhood events, school outreach, and charity programming that builds authentic community goodwill. Brand presence in low-pressure, high-trust environments that create deep and lasting community association.</div>
+      <div class="ev-pills"><span class="ev-pill">Youth</span><span class="ev-pill">Charity</span><span class="ev-pill">Outreach</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">08</div>
+      <div class="ev-name">Media &amp; Press Events</div>
+      <div class="ev-desc">Press conferences, media days, launch events, and editorial coverage moments — brand placement inside the formal media infrastructure that generates earned coverage, not just paid reach.</div>
+      <div class="ev-pills"><span class="ev-pill">Press</span><span class="ev-pill">Media Days</span><span class="ev-pill">Earned Coverage</span></div>
+    </div>
+
+    <div class="ev-cell">
+      <div class="ev-num">09</div>
+      <div class="ev-name">Signing Days &amp; Commitment Events</div>
+      <div class="ev-desc">High school signing days, college commitment celebrations, and NIL announcement events — culturally significant moments in Illinois sports that draw intense community attention and media coverage.</div>
+      <div class="ev-pills"><span class="ev-pill">NIL</span><span class="ev-pill">Recruiting</span><span class="ev-pill">High Visibility</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── ENTERTAINMENT ── -->
+<div class="pt-panel" id="panel-entertainment">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">Entertainment</div>
+        <div class="sec-h2">Entertainment <span class="thin">Partners</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:440px">Illinois Sponsors operates at the intersection of sports, media, and entertainment. Our entertainment network covers venues, productions, talent, and cultural moments that connect brands to Illinois audiences at their highest points of engagement.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)">
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Live Entertainment</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Venues &amp; Live Events</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85;margin-bottom:16px">Concert halls, arenas, theaters, and event spaces across Illinois. Signage, on-site activation, digital display, and social coverage across all live entertainment programming.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Concerts</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Theaters</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Arenas</span></div>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Talent &amp; Creators</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Artists, Performers &amp; Creators</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85;margin-bottom:16px">Illinois-based musicians, performers, content creators, and entertainers with established audiences. Endorsement content, event appearances, and organic brand integration through talent that Illinois communities already follow.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Musicians</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Performers</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Creators</span></div>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Film &amp; Production</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Film, TV &amp; Production</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85;margin-bottom:16px">Illinois-produced and distributed film and television projects. Brand placement and association within content properties that reach real audiences through streaming, broadcast, and theatrical distribution.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Film</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">TV</span><span style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:5px 10px">Streaming</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── MEDIA ── -->
+<div class="pt-panel" id="panel-media">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">Media</div>
+        <div class="sec-h2">Media <span class="thin">Partners</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:440px">Illinois Sponsors builds and amplifies across digital, broadcast, podcast, and editorial media — giving sponsors visibility across every channel our audience consumes.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)">
+      <div style="background:var(--panel);padding:52px 48px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">01</div>
+        <div style="font-size:20px;font-weight:900;letter-spacing:-0.5px;color:var(--ink-text);margin-bottom:14px">Broadcast &amp; Livestream</div>
+        <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.85">Official broadcast and livestream coverage of games, events, and productions — sponsor mentions, logo placements, and pre/post-roll brand integration that reaches viewers live and on replay across all distribution channels.</p>
+      </div>
+      <div style="background:var(--panel);padding:52px 48px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">02</div>
+        <div style="font-size:20px;font-weight:900;letter-spacing:-0.5px;color:var(--ink-text);margin-bottom:14px">Podcast &amp; Audio</div>
+        <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.85">Illinois Sponsors and partner podcasts covering sports, entertainment, and culture. Presenting sponsorships, host-read ads, logo placements, and brand integration across audio content that Illinois audiences consume weekly.</p>
+      </div>
+      <div style="background:var(--panel);padding:52px 48px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">03</div>
+        <div style="font-size:20px;font-weight:900;letter-spacing:-0.5px;color:var(--ink-text);margin-bottom:14px">Digital &amp; Social Media</div>
+        <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.85">Illinois Sponsors' owned social channels and partner digital properties — including game highlights, event coverage, editorial content, and branded storytelling series distributed across Instagram, YouTube, TikTok, and email.</p>
+      </div>
+      <div style="background:var(--panel);padding:52px 48px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">04</div>
+        <div style="font-size:20px;font-weight:900;letter-spacing:-0.5px;color:var(--ink-text);margin-bottom:14px">Editorial &amp; Press</div>
+        <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.85">Official press releases, editorial features, and media announcements that generate earned coverage. Brand co-branding alongside Illinois Sponsors in media placements that carry credibility beyond paid advertising.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── COMMUNITY ── -->
+<div class="pt-panel" id="panel-community">
+  <section class="sec">
+    <div class="sec-top">
+      <div>
+        <div class="sec-over">Community</div>
+        <div class="sec-h2">Community <span class="thin">Partners</span></div>
+      </div>
+      <p style="font-size:13px;font-weight:400;color:var(--dim);line-height:1.8;max-width:440px">Illinois Sponsors' community network includes youth programs, nonprofit organizations, cultural institutions, and civic initiatives — the grassroots layer of Illinois' sports, media, and entertainment infrastructure.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)">
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Youth Organizations</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Youth Sports &amp; Arts Programs</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Youth leagues, development programs, arts organizations, and after-school initiatives that build the next generation of Illinois athletes, artists, and community leaders.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Nonprofits &amp; Foundations</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Nonprofits &amp; Civic Organizations</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Community foundations, civic organizations, and charitable initiatives operating across Illinois. Cause-aligned sponsorships that build brand goodwill through genuine investment in the communities brands want to reach.</p>
+      </div>
+      <div style="background:var(--panel);padding:44px 40px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--faint);margin-bottom:20px">Cultural Institutions</div>
+        <div style="font-size:16px;font-weight:800;color:var(--ink-text);margin-bottom:12px">Cultural &amp; Arts Institutions</div>
+        <p style="font-size:12px;font-weight:400;color:var(--dim);line-height:1.85">Museums, galleries, cultural centers, and arts institutions across Illinois. Long-term institutional partnerships that align brands with the cultural identity of Illinois communities in lasting, meaningful ways.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-over">Sports. Media. Entertainment.</div>
+  <div class="cta-h">Become <span class="blue">Part</span><br>of the Network.</div>
+  <p class="cta-sub">Whether you're a school, a sports organization, an entertainment venue, a media property, or a community initiative — Illinois Sponsors builds partnerships designed to generate real visibility and lasting community impact.</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-hero-blue" onclick="openModal('general');return false;">Get in Touch</a>
+    <a href="catalog.html" class="btn-hero-void">View the Catalog</a>
+  </div>
+  <a href="mailto:partners@wearevyro.com" class="cta-email">partners@wearevyro.com</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><a href="index.html" class="f-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a><p class="f-desc">A sports, media, entertainment, and community influence company building visibility through partnerships, activations, sponsorships, and cultural engagement. Building What's Next.</p></div>
+    <div class="f-col"><h5>Sponsorship</h5><ul><li><a href="catalog.html">Sponsorship Catalog</a></li><li><a href="index.html#what-we-do">Sponsorship Types</a></li><li><a href="index.html#value">The Value</a></li><li><a href="index.html#partners">Meet Our Sponsors</a></li></ul></div>
+    <div class="f-col"><h5>Company</h5><ul><li><a href="about.html">About Illinois Sponsors</a></li><li><a href="https://wearevyro.com" target="_blank">A Vyro Companies™ Company</a></li><li><a href="news.html">News &amp; Activations</a></li><li><a href="partners.html">Our Partners</a></li></ul></div>
+    <div class="f-col"><h5>Contact</h5><ul><li><a href="contact.html">Become a Partner</a></li><li><a href="donate.html">Donate Today</a></li><li><a href="mailto:partners@wearevyro.com">partners@wearevyro.com</a></li><li><a href="https://wearevyro.com" target="_blank">wearevyro.com</a></li></ul></div>
+  </div>
+  <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="donate.html">Donate</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+  <div class="footer-base"><p>© 2025 Vyro Companies™ — All Rights Reserved.</p><p>Building What's Next. <span class="blue">Illinois Sponsors™</span></p></div>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)"><div class="modal"><button class="modal-close" onclick="closeModal()">×</button><div id="modal-form-wrap"><div class="modal-over">Partnership Inquiry</div><div class="modal-title">Let's Build Something.</div><p class="modal-sub">Fill out the form below and our team will follow up within 24 hours.</p><div style="display:flex;flex-direction:column;gap:0"><div class="form-section-label">Contact Information</div><div class="form-row" style="margin-bottom:1px"><div class="form-field"><div class="form-label">Name <span>*</span></div><input class="modal-input" type="text" id="m-name" placeholder="Jane Smith"></div><div class="form-field"><div class="form-label">Title</div><input class="modal-input" type="text" id="m-title" placeholder="Athletic Director"></div></div><div class="form-row" style="margin-bottom:1px"><div class="form-field"><div class="form-label">Organization <span>*</span></div><input class="modal-input" type="text" id="m-company" placeholder="Lincoln High School"></div><div class="form-field"><div class="form-label">Email <span>*</span></div><input class="modal-input" type="email" id="m-email" placeholder="you@organization.com"></div></div><div class="form-row" style="margin-bottom:20px"><div class="form-field"><div class="form-label">Phone</div><input class="modal-input" type="tel" id="m-phone" placeholder="(312) 555-0100"></div><div class="form-field"><div class="form-label">Partner Type</div><select class="modal-select" id="m-tier"><option value="">Select type</option><option value="school">School / Athletic Program</option><option value="sports">Sports Organization</option><option value="entertainment">Entertainment Venue / Production</option><option value="media">Media Property</option><option value="community">Community / Nonprofit</option><option value="other">Other</option></select></div></div><div class="form-row full"><div class="form-field"><div class="form-label">Message</div><textarea class="modal-textarea" id="m-message" placeholder="Tell us about your organization and what you're looking for..."></textarea></div></div><button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button><p class="modal-note">No commitment required. Our team responds within 24 hours.</p></div></div><div class="modal-success" id="modal-success"><div class="modal-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Inquiry Received</h3><p>Thank you. Our team will be in touch within 24 hours.<br><br><span class="blue">partners@wearevyro.com</span></p></div></div></div>
+
+<script src="assets/js/main.js"></script>
+<script>
+// Partner type tabs
+document.querySelectorAll('.pt-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.pt-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.pt-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('panel-' + this.dataset.panel).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
