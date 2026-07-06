@@ -8,25 +8,12 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbwC1CJqNYm_1gQSGCL10nvQ
 
 // ── DOM READY ──
 document.addEventListener('DOMContentLoaded', () => {
-  injectAcquiredBanner();
   setActiveNav();
   initMobileNav();
   initReveal();
   buildFAQ();
   buildLegalPages();
 });
-
-// ── ACQUIRED BANNER (fallback — usually baked into HTML) ──
-function injectAcquiredBanner() {
-  if (document.querySelector('.acquired-banner')) return;
-  const banner = document.createElement('a');
-  banner.className = 'acquired-banner';
-  banner.href = 'https://wearevyro.org';
-  banner.target = '_blank';
-  banner.rel = 'noopener';
-  banner.innerHTML = '<span class="ab-pulse"></span><span class="ab-text">Newly Acquired By <strong>Vyro Companies&trade;</strong></span><span class="ab-arrow">&rarr;</span>';
-  document.body.insertBefore(banner, document.body.firstChild);
-}
 
 // ── MOBILE NAV ──
 function initMobileNav() {
