@@ -42,12 +42,16 @@ function initMobileNav() {
 
 // ── ACTIVE NAV ──
 function setActiveNav() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  if (parts.length > 1 && parts[parts.length - 1] === 'index.html') parts.pop();
+  const current = parts.length ? parts[parts.length - 1] : 'index.html';
+  const nested = parts.length > 1 ? parts.join('/') : null;
+  const section = parts.length > 1 ? parts[0] : null;
   document.querySelectorAll('.nav-links li a').forEach(a => {
-    const href = (a.getAttribute('href') || '').split('#')[0].split('/').pop();
-    if (href === path || (path === '' && href === 'index.html')) {
-      a.classList.add('active');
-    }
+    const base = (a.getAttribute('href') || '').split('#')[0].replace(/^\//, '').replace(/\/$/, '');
+    if (base === current || (parts.length === 0 && base === 'index.html')) a.classList.add('active');
+    if (nested && base === nested) a.classList.add('active');
+    if (section && base === section + '.html') a.classList.add('active');
   });
 }
 
