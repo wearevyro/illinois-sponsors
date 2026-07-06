@@ -3,8 +3,8 @@
 // Newly Acquired By Vyro Companies™
 // ═══════════════════════════════════════════════════════════════
 
-// ── GAS INQUIRY ENDPOINT ──
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbwC1CJqNYm_1gQSGCL10nvQwMXoD6CzmIZ6RD80FBeI5zPqFVR_VzgbOFcr0otXI_2Q/exec';
+// ── INQUIRY ENDPOINT (FormSubmit → contact@illinoissponsors.com) ──
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@illinoissponsors.com';
 
 // ── DOM READY ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -113,32 +113,24 @@ async function submitForm() {
     source:   document.getElementById('m-source')?.value          || '',
     message:  document.getElementById('m-message')?.value.trim()  || '',
   };
-  try { gasRequest(payload).catch(() => {}); } catch(e) {}
+  try { sendInquiry(payload).catch(() => {}); } catch(e) {}
   const wrap = document.getElementById('modal-form-wrap');
   const succ = document.getElementById('modal-success');
   if (wrap) wrap.style.display = 'none';
   if (succ) succ.style.display = 'block';
 }
 
-// ── GAS JSONP (CORS-safe for GitHub Pages) ──
-function gasRequest(params) {
-  return new Promise((resolve, reject) => {
-    if (!GAS_URL || GAS_URL.includes('YOUR_SCRIPT_ID')) {
-      reject(new Error('GAS not configured')); return;
-    }
-    const cbName = '_gasCb_' + Date.now();
-    const script = document.createElement('script');
-    const timeout = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 10000);
-    function cleanup() {
-      delete window[cbName];
-      if (script.parentNode) document.body.removeChild(script);
-      clearTimeout(timeout);
-    }
-    window[cbName] = (data) => { cleanup(); resolve(data); };
-    script.src = GAS_URL + '?' + new URLSearchParams({ ...params, callback: cbName }).toString();
-    script.onerror = () => { cleanup(); reject(new Error('load failed')); };
-    document.body.appendChild(script);
-  });
+// ── FORM TRANSPORT (FormSubmit AJAX — works from static GitHub Pages) ──
+function sendInquiry(params) {
+  return fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Illinois Sponsors — new ' + (params.action || 'inquiry'),
+      _template: 'table',
+      ...params,
+    }),
+  }).then(r => r.json());
 }
 
 // ── FAQ ──
@@ -146,7 +138,7 @@ const FAQ_DATA = [
   // General
   { q: 'What is Illinois Sponsors?', a: 'Illinois Sponsors is a sports, media, entertainment, and community influence company. We build visibility through partnerships, activations, sponsorships, and cultural engagement — helping brands, businesses, organizations, and initiatives connect with real Illinois communities at every level. We are part of Vyro Companies™.' },
   { q: 'Who can become a sponsor or partner?', a: 'Any brand, business, or organization that wants to connect with Illinois communities is a fit. We work with local businesses, regional brands, national companies, nonprofits, and community initiatives — across sports, entertainment, media, and cultural programming. If you want real community presence in Illinois, we can build something.' },
-  { q: 'How do I get started?', a: 'Fill out the inquiry form on our site or email us directly at partners@wearevyro.com. Our team responds within 24 hours with options tailored to your goals, budget, and target audience. No commitment required to start the conversation.' },
+  { q: 'How do I get started?', a: 'Fill out the inquiry form on our site or email us directly at contact@illinoissponsors.com. Our team responds within 24 hours with options tailored to your goals, budget, and target audience. No commitment required to start the conversation.' },
   { q: 'How does the partnership process work?', a: 'You tell us your goals, budget, and audience. We build a custom package from our catalog — selecting the right combination of placements, activations, and media options to match exactly what you need. Once you approve, Vyro handles all creative coordination, logistics, and execution. You review and approve all creative before anything goes live.' },
   { q: 'How long does it take to go live?', a: 'Once your agreement is finalized and brand assets are submitted, Vyro begins coordination within two weeks. Most partnerships are fully activated within 30 days of signing.' },
   // Sports
@@ -203,6 +195,15 @@ function submitDonate() {
   const name  = document.getElementById('donate-name')?.value.trim();
   const email = document.getElementById('donate-email')?.value.trim();
   if (!name || !email) { alert('Please enter your name and email.'); return; }
+  const payload = {
+    action:  'donation',
+    name,
+    email,
+    amount:  document.getElementById('donate-amount-display')?.textContent || '',
+    custom:  document.getElementById('donate-custom')?.value.trim() || '',
+    message: document.getElementById('donate-msg')?.value.trim() || '',
+  };
+  try { sendInquiry(payload).catch(() => {}); } catch(e) {}
   const form = document.getElementById('donate-form');
   const succ = document.getElementById('donate-success');
   if (form) form.style.display = 'none';
@@ -215,7 +216,7 @@ const PRIVACY_SECTIONS = [
   ['How We Use Your Information', 'We use the information we collect to respond to sponsorship and donation inquiries, communicate about partnership opportunities, send relevant updates about events and activations, and improve our services. We do not sell your information to third parties.'],
   ['Information Sharing', 'Illinois Sponsors, operated by Vyro Companies™, does not sell, rent, or share your personal information with third parties for their marketing purposes. We may share information with service providers who assist in our operations, subject to confidentiality agreements.'],
   ['Data Security', 'We take reasonable measures to protect your information from unauthorized access. However, no method of transmission over the internet is 100% secure.'],
-  ['Contact Us', 'For privacy questions or requests, contact us at partners@wearevyro.com. We will respond within 5 business days.'],
+  ['Contact Us', 'For privacy questions or requests, contact us at contact@illinoissponsors.com. We will respond within 5 business days.'],
 ];
 
 const TERMS_SECTIONS = [
@@ -225,7 +226,7 @@ const TERMS_SECTIONS = [
   ['Intellectual Property', 'All content on this site, including text, design, and graphics, is the property of Vyro Companies™ or its partners. You may not reproduce, distribute, or create derivative works without written permission.'],
   ['Limitation of Liability', 'Illinois Sponsors and Vyro Companies™ are not liable for indirect, incidental, or consequential damages arising from your use of this website or participation in sponsorship programs.'],
   ['Governing Law', 'These terms are governed by the laws of the State of Illinois. Any disputes shall be resolved in Illinois courts.'],
-  ['Contact', 'For questions about these terms, contact partners@wearevyro.com.'],
+  ['Contact', 'For questions about these terms, contact contact@illinoissponsors.com.'],
 ];
 
 function buildLegalPages() {

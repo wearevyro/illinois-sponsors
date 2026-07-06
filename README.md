@@ -28,17 +28,15 @@ illinois-sponsors/
     └── js/main.js      Shared JavaScript
 ```
 
-## Sponsor Portal Auth
+## Forms
 
-Authentication uses Google Apps Script. See `illinois-sponsors-gas.js` for setup.
-
-**Demo credentials (dev only — remove before launch):**
-- `demo@raisingcanes.com` / `RC2026`
-- `demo@jordanbrand.com` / `JB2026`
-- `test@test.com` / `TEST123`
+Inquiry and donation forms submit via FormSubmit (https://formsubmit.co) to
+contact@illinoissponsors.com. No backend or API key required. If the
+destination inbox changes, update `FORM_ENDPOINT` in `assets/js/main.js` and
+complete FormSubmit's one-time activation email sent to the new address.
 
 ## Contact
 
-partners@wearevyro.com | wearevyro.com
+contact@illinoissponsors.com | illinoissponsors.com
 
 © 2025 Vyro Companies™ — All Rights Reserved.
