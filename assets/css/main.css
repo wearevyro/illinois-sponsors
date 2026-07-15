@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* Force light only — never react to system preference */
 :root { color-scheme: light; }
@@ -17,8 +17,8 @@ html { -webkit-text-size-adjust: 100%; }
   --mist: rgba(15,23,42,0.03);
   --ink-text: #0F172A;
   --white: #0F172A;
-  --dim: rgba(15,23,42,0.68);
-  --faint: rgba(15,23,42,0.42);
+  --dim: #0F172A;
+  --faint: rgba(15,23,42,0.72);
   --ghost: rgba(15,23,42,0.04);
   --hover-bg: rgba(15,23,42,0.04);
   --blue: #0F172A;
@@ -693,3 +693,152 @@ body { font-family: var(--font); background-color: #ffffff; color: #0F172A; over
 .detail-list li { font-size: 12px; font-weight: 500; color: var(--ink-text); line-height: 1.5; padding-left: 18px; position: relative; }
 .detail-list li::before { content: ''; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; background: var(--orange); }
 @media (max-width: 820px) { .detail { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; } .detail-list { grid-template-columns: 1fr; } }
+
+.wwd-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-text); background: var(--panel); border: 1px solid var(--line2); padding: 10px 16px; white-space: nowrap; }
+
+.serve-list { list-style: none; margin-top: 16px; display: grid; gap: 8px; }
+.serve-list li { font-size: 12px; font-weight: 500; color: var(--dim); line-height: 1.4; padding-left: 15px; position: relative; }
+.serve-list li::before { content: ''; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; background: var(--orange); }
+.serve-cell .serve-desc + .serve-list { margin-top: 12px; }
+html { scroll-padding-top: 84px; }
+
+/* ============================================================
+   CORPORATE THEME  —  media-rights company (JMI / Van Wagner register)
+   Clean sans, corporate blue, photography-forward structure
+   ============================================================ */
+:root {
+  --ink-text: #0A2540;
+  --white: #0A2540;
+  --dim: #16324f;
+  --faint: rgba(10,37,64,0.58);
+  --blue: #103E75;
+  --blue-bright: #1A5296;
+  --orange: #1A5296;
+  --navy: #0A2540;
+  --navy-deep: #071C33;
+  --line: rgba(10,37,64,0.12);
+  --line2: rgba(10,37,64,0.20);
+  --surface: #f3f6fb;
+  --ink: #f7f9fc;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-head: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+body { color: var(--ink-text); }
+
+/* Clean sans headlines, restrained tracking */
+.page-hero-h1, .focus-h, .sec-h2, .cta-h, .reach-h, .detail-h {
+  font-family: var(--font-head);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.page-hero-h1 { font-size: clamp(34px,4.6vw,60px); }
+.focus-h      { font-size: clamp(26px,3.1vw,40px); }
+.sec-h2       { font-size: clamp(26px,3.2vw,42px); }
+.cta-h        { font-size: clamp(34px,4.8vw,62px); }
+.reach-h      { font-size: clamp(28px,3.6vw,46px); }
+.detail-h     { font-size: clamp(24px,2.8vw,34px); }
+.page-hero-h1 .thin, .focus-h .thin, .sec-h2 .thin, .reach-h .thin, .cta-h .thin { font-weight: 800; letter-spacing: -0.02em; color: var(--faint); font-style: normal; }
+.cta-h .thin, .cta-h .blue { color: rgba(255,255,255,0.55); font-weight: 800; font-style: normal; }
+.sec-over, .page-hero-over, .reach-over { color: var(--blue-bright); font-weight: 700; letter-spacing: 2.5px; }
+.card-name, .serve-name { font-family: var(--font-head); text-transform: none; letter-spacing: -0.01em; font-weight: 700; font-size: 17px; }
+.nav-links li a { font-size: 11px; letter-spacing: 1.4px; font-weight: 600; }
+.btn-blue, .btn-hero-blue { background: var(--blue); color: #fff; border-radius: 2px; letter-spacing: 1.5px; font-weight: 700; }
+.btn-blue:hover, .btn-hero-blue:hover { opacity: 1; background: var(--blue-bright); }
+.hero.showcase .btn-hero-blue, .cta-band .btn-hero-blue { background: #ffffff; color: var(--blue); }
+.hero.showcase .btn-hero-blue:hover, .cta-band .btn-hero-blue:hover { background: #eef3fa; color: var(--blue); }
+.btn-hero-void { border-radius: 2px; letter-spacing: 1.5px; }
+.hero, .cta-band { background: #0A2540; }
+.insider-panel, .navy { background: #0A2540; }
+.hero-scrim { background: linear-gradient(90deg, rgba(10,37,64,0.95) 0%, rgba(10,37,64,0.82) 50%, rgba(10,37,64,0.58) 100%); }
+.hero-tagline { color: rgba(255,255,255,0.82); font-size: clamp(18px,2.1vw,24px); line-height: 1.62; }
+.page-hero-rule { background: var(--blue-bright); }
+
+/* ── PHOTO HERO (full-bleed image) ── */
+.photo-hero { position: relative; min-height: 90vh; display: flex; align-items: flex-end; background-size: cover; background-position: center; overflow: hidden; }
+.photo-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,22,40,0.55) 0%, rgba(7,22,40,0.30) 40%, rgba(7,22,40,0.88) 100%); }
+.ph-inner { position: relative; z-index: 2; padding: 0 72px 88px; max-width: 1100px; }
+.ph-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-bottom: 22px; }
+.ph-h1 { font-family: var(--font-head); font-size: clamp(34px,5.2vw,72px); font-weight: 800; line-height: 1.04; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; max-width: 15ch; }
+.ph-sub { font-size: clamp(15px,1.6vw,19px); font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.86); max-width: 620px; margin-top: 22px; }
+.ph-btns { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+@media (max-width: 820px){ .photo-hero { min-height: 78vh; } .ph-inner { padding: 0 20px 56px; } }
+
+/* ── LEDE (positioning band) ── */
+.lede { padding: 96px 72px; border-bottom: 1px solid var(--line); }
+.lede-inner { max-width: 1100px; }
+.lede h2 { font-family: var(--font-head); font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.28; letter-spacing: -0.02em; color: var(--ink-text); max-width: 20ch; }
+.lede h2 span { color: var(--blue-bright); }
+.lede p { font-size: 15px; line-height: 1.9; color: var(--dim); max-width: 640px; margin-top: 26px; }
+@media (max-width: 820px){ .lede { padding: 60px 20px; } }
+
+/* ── LOGO WALL ── */
+.logowall { padding: 72px 72px; background: var(--surface); border-bottom: 1px solid var(--line); text-align: center; }
+.lw-title { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--faint); margin-bottom: 40px; }
+.lw-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); max-width: 1180px; margin: 0 auto; }
+.lw-cell { background: #fff; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; }
+.lw-cell span { font-family: var(--font-head); font-weight: 800; font-size: 15px; letter-spacing: 0.5px; color: rgba(10,37,64,0.32); text-transform: uppercase; }
+@media (max-width: 900px){ .lw-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 560px){ .lw-grid { grid-template-columns: repeat(2,1fr); } }
+
+/* ── AUDIENCE CARDS (image-backed) ── */
+.audcards { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.audcard { position: relative; min-height: 340px; display: flex; align-items: flex-end; background-size: cover; background-position: center; overflow: hidden; text-decoration: none; }
+.audcard::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,22,40,0.15) 0%, rgba(7,22,40,0.82) 100%); transition: background 0.35s; }
+.audcard:hover::after { background: linear-gradient(180deg, rgba(16,62,117,0.35) 0%, rgba(7,22,40,0.90) 100%); }
+.audcard-body { position: relative; z-index: 2; padding: 36px 40px; }
+.audcard-k { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
+.audcard-name { font-family: var(--font-head); font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 8px; }
+.audcard-desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 42ch; }
+.audcard-arrow { color: #fff; font-weight: 700; margin-top: 14px; font-size: 13px; letter-spacing: 1px; display: inline-flex; gap: 8px; transition: gap 0.2s; }
+.audcard:hover .audcard-arrow { gap: 14px; }
+@media (max-width: 820px){ .audcards { grid-template-columns: 1fr; } .audcard { min-height: 280px; } }
+
+/* ── WORK GRID ── */
+.workgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.workcell { position: relative; aspect-ratio: 4/3; background-size: cover; background-position: center; overflow: hidden; text-decoration: none; }
+.workcell::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,22,40,0) 30%, rgba(7,22,40,0.85) 100%); }
+.workcell-body { position: absolute; z-index: 2; bottom: 0; left: 0; padding: 26px 28px; }
+.workcell-k { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+.workcell-name { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+@media (max-width: 900px){ .workgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px){ .workgrid { grid-template-columns: 1fr; } }
+
+/* Photography (swap these URLs for licensed / client imagery) */
+.ph-home { background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1920&q=72'); }
+.ac-colleges { background-image: url('../img/college-conferences.webp'); }
+.ac-pro      { background-image: url('../img/pro-teams-venues.avif'); }
+.ac-brands   { background-image: url('../img/corporate-brands.png'); }
+.ac-events   { background-image: url('../img/events-entertainment.webp'); }
+.wk-1 { background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=72'); }
+.wk-2 { background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=72'); }
+.wk-3 { background-image: url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=72'); }
+/* Deeper card overlays so any image reads richly under text */
+.audcard::after { background: linear-gradient(180deg, rgba(7,22,40,0.30) 0%, rgba(7,22,40,0.88) 100%); }
+
+/* ── WHAT WE DO image bands ── */
+.wd-list { background: var(--navy); }
+.detail.wd-band { position: relative; overflow: hidden; background-size: cover; background-position: center; padding: 88px 72px; margin: 0; border-bottom: 1px solid rgba(255,255,255,0.08); align-items: center; }
+.detail.wd-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,22,40,0.94) 0%, rgba(7,22,40,0.82) 50%, rgba(7,22,40,0.66) 100%); z-index: 0; }
+.detail.wd-band > div { position: relative; z-index: 2; }
+.detail.wd-band .detail-k { color: rgba(255,255,255,0.72); }
+.detail.wd-band .detail-h { color: #fff; }
+.detail.wd-band .detail-body p { color: rgba(255,255,255,0.88); }
+@media (max-width: 820px){ .detail.wd-band { padding: 54px 20px; } }
+.wd-1 { background-image: url('../img/wd/wd-1.jpg'); }
+.wd-2 { background-image: url('../img/wd/wd-2.jpg'); }
+.wd-3 { background-image: url('../img/wd/wd-3.jpg'); }
+.wd-4 { background-image: url('../img/wd/wd-4.jpg'); }
+.wd-5 { background-image: url('../img/wd/wd-5.jpg'); }
+.wd-6 { background-image: url('../img/wd/wd-6.jpg'); }
+.wd-7 { background-image: url('../img/wd/wd-7.jpg'); }
+.wd-8 { background-image: url('../img/wd/wd-8.jpg'); }
+/* detail bullet lists readable on image bands */
+.detail.wd-band .detail-list li { color: rgba(255,255,255,0.90); }
+.detail.wd-band .detail-list li::before { background: rgba(255,255,255,0.85); }
+/* Who We Serve bands */
+.ws-pro     { background-image: url('../img/ws/pro.jpg'); }
+.ws-college { background-image: url('../img/college-conferences.webp'); }
+.ws-youth   { background-image: url('../img/ws/youth.jpg'); }
+.ws-brands  { background-image: url('../img/ws/brands.jpg'); }
