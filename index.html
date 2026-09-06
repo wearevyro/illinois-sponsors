@@ -33,6 +33,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
+<style>
+/* ── PATH SPLIT (properties vs brands) ── */
+.pathsplit { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.pathcard { background: var(--panel); padding: 64px 56px; display: flex; flex-direction: column; text-decoration: none; transition: background 0.3s; }
+.pathcard:hover { background: var(--hover-bg); }
+.pathcard.alt { background: #0A2540; }
+.pathcard.alt:hover { background: #0d2e4f; }
+.pathcard-k { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 20px; }
+.pathcard.alt .pathcard-k { color: rgba(255,255,255,0.6); }
+.pathcard-h { font-family: var(--font-head); font-size: clamp(24px,2.6vw,34px); font-weight: 800; letter-spacing: -0.02em; color: var(--ink-text); line-height: 1.1; margin-bottom: 16px; }
+.pathcard.alt .pathcard-h { color: #fff; }
+.pathcard-d { font-size: 14px; line-height: 1.75; color: var(--dim); max-width: 44ch; flex: 1; }
+.pathcard.alt .pathcard-d { color: rgba(255,255,255,0.78); }
+.pathcard-arrow { margin-top: 28px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); display: inline-flex; gap: 8px; transition: gap 0.2s; }
+.pathcard.alt .pathcard-arrow { color: #fff; }
+.pathcard:hover .pathcard-arrow { gap: 14px; }
+@media (max-width: 820px){ .pathsplit { grid-template-columns: 1fr; } .pathcard { padding: 40px 24px; } }
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Illinois Sponsors","alternateName":"Illinois Sponsors Commercial Partnerships","url":"https://illinoissponsors.com/","logo":"https://illinoissponsors.com/assets/img/icon-512.png","image":"https://illinoissponsors.com/assets/img/og-image.png","description":"Illinois Sponsors is a media rights and commercial partnerships company representing sports and entertainment properties and connecting them to brands.","email":"contact@illinoissponsors.com","areaServed":{"@type":"State","name":"Illinois"},"knowsAbout":["Sponsorship","Multimedia Rights","Corporate Partnerships","Naming Rights","Premium Hospitality","Licensing","Sports Marketing"],"sameAs":[]}
 </script>
@@ -85,11 +103,18 @@
   </div>
 </section>
 
+<section class="stats">
+  <div class="s-cell"><div class="s-idx">01</div><div class="s-num">$45<em>M+</em></div><div class="s-label">Partnership Revenue Managed</div><div class="s-note">Annual commercial value across the properties we operate.</div></div>
+  <div class="s-cell"><div class="s-idx">02</div><div class="s-num">30<em>+</em></div><div class="s-label">Properties Represented</div><div class="s-note">Colleges, conferences, pro teams, venues, and events.</div></div>
+  <div class="s-cell"><div class="s-idx">03</div><div class="s-num">75<em>+</em></div><div class="s-label">Active Brand Partners</div><div class="s-note">National and regional brands in market with our properties.</div></div>
+  <div class="s-cell"><div class="s-idx">04</div><div class="s-num">92<em>%</em></div><div class="s-label">Partner Renewal Rate</div><div class="s-note">Partnerships that come back season after season.</div></div>
+</section>
+
 <section class="sec-top-band" style="padding:88px 72px 40px">
   <div class="sec-over" style="text-align:center">Who We Team Up With</div>
   <div class="sec-h2" style="text-align:center;max-width:none">Impact across every <span class="thin">level of sport.</span></div>
 </section>
-<div class="audcards">
+<div class="audcards" style="grid-template-columns:repeat(3,1fr)">
   <a class="audcard ac-colleges" href="who-we-serve.html">
     <div class="audcard-body">
       <div class="audcard-k">01</div>
@@ -114,15 +139,22 @@
       <span class="audcard-arrow">Learn more →</span>
     </div>
   </a>
-  <a class="audcard ac-events" href="who-we-serve.html">
-    <div class="audcard-body">
-      <div class="audcard-k">04</div>
-      <div class="audcard-name">Events &amp; Entertainment</div>
-      <div class="audcard-desc">Tournaments, festivals, and live properties turning attention into sustainable revenue.</div>
-      <span class="audcard-arrow">Learn more →</span>
-    </div>
-  </a>
 </div>
+
+<section class="pathsplit">
+  <a class="pathcard" href="#" onclick="openModal('general');return false;">
+    <div class="pathcard-k">For Properties</div>
+    <div class="pathcard-h">I represent a property.</div>
+    <div class="pathcard-d">Colleges, conferences, teams, venues, and events that want their commercial business built, managed, and sold as one operation — not bolted onto a national portfolio.</div>
+    <span class="pathcard-arrow">Start the conversation →</span>
+  </a>
+  <a class="pathcard alt" href="catalog.html">
+    <div class="pathcard-k">For Brands</div>
+    <div class="pathcard-h">I'm a brand looking for reach.</div>
+    <div class="pathcard-d">National and regional brands that want authentic, measurable access to the audiences that follow Illinois sports and entertainment.</div>
+    <span class="pathcard-arrow">See what's available →</span>
+  </a>
+</section>
 
 <section class="sec alt">
   <div class="sec-top reveal">
@@ -134,7 +166,7 @@
       <div class="card-n">01</div>
       <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
       <div class="card-name">Corporate Partnerships</div>
-      <div class="card-desc">Official partnerships, naming rights, and premium hospitality that place national and regional brands inside the moments fans care about.</div>
+      <div class="card-desc">Official partnerships, naming rights, and premium hospitality that place brands inside the moments fans care about — every asset priced on audience data and measured on return.</div>
     </div>
     <div class="card">
       <div class="card-n">02</div>
@@ -144,10 +176,48 @@
     </div>
     <div class="card">
       <div class="card-n">03</div>
-      <div class="card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-      <div class="card-name">Data &amp; Activation</div>
-      <div class="card-desc">Audience data, valuation, and activation that price every asset on evidence and prove return for every partner, season after season.</div>
+      <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+      <div class="card-name">Commercial Strategy</div>
+      <div class="card-desc">Rights valuation, category planning, and go-to-market for properties entering or professionalizing their commercial business.</div>
     </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-top reveal">
+    <div><div class="sec-over">Why Illinois Sponsors</div><div class="sec-h2">Not a rep firm. <span class="thin">An operator.</span></div></div>
+    <a href="how-we-win.html" class="sec-link">How We Win</a>
+  </div>
+  <div class="insider-grid reveal">
+    <div class="insider-copy">
+      <p>The national rights holders bolt Illinois properties onto a portfolio run from another state, then chase the categories that clear fastest. In-house teams treat commercial as a side responsibility — under-resourced and under-sold.</p>
+      <p>We operate the full commercial business of the properties we represent — multimedia rights, corporate partnerships, and premium experiences — from inside the market, with our compensation tied to the revenue we build.</p>
+      <a href="#" class="btn-hero-blue" onclick="openModal('general');return false;">Partner With Us</a>
+    </div>
+    <div class="insider-panel">
+      <div class="ip-h">What that means for a property:</div>
+      <ul class="ip-list">
+        <li>One team running media, partnerships, and hospitality as a single P&amp;L</li>
+        <li>Local decision-makers who know Illinois sport at every level</li>
+        <li>Pay tied to revenue growth, not placement volume</li>
+        <li>Every asset priced on audience data, every partner shown a return</li>
+        <li>A multi-year mandate, not a campaign</li>
+      </ul>
+      <div class="ip-foot">Full commercial management, under one roof.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="sec-top reveal">
+    <div><div class="sec-over">For Brands</div><div class="sec-h2">What you can put <span class="thin">your name on.</span></div></div>
+    <a href="catalog.html" class="sec-link">Browse the Full Catalog</a>
+  </div>
+  <div class="serve4 reveal">
+    <div class="serve-cell"><div class="serve-n">01</div><div class="serve-name">Properties</div><div class="serve-desc">Rights across every level of Illinois sport.</div><ul class="serve-list"><li>College athletic departments &amp; conferences</li><li>Pro teams, arenas &amp; stadiums</li><li>Tournaments, showcases &amp; live events</li></ul></div>
+    <div class="serve-cell"><div class="serve-n">02</div><div class="serve-name">Inventory</div><div class="serve-desc">Assets sold as one integrated package.</div><ul class="serve-list"><li>Broadcast, streaming &amp; digital media</li><li>Venue naming &amp; signage</li><li>Official partner &amp; category rights</li><li>Premium hospitality &amp; suites</li></ul></div>
+    <div class="serve-cell"><div class="serve-n">03</div><div class="serve-name">Activation</div><div class="serve-desc">Ways to show up in front of fans.</div><ul class="serve-list"><li>Content &amp; social integrations</li><li>On-site &amp; game-day experiences</li><li>Community &amp; grassroots programs</li></ul></div>
+    <div class="serve-cell"><div class="serve-n">04</div><div class="serve-name">Reach</div><div class="serve-desc">Audiences that move Illinois markets.</div><ul class="serve-list"><li>Chicago &amp; statewide media markets</li><li>Student, alumni &amp; season-ticket bases</li><li>Regional broadcast &amp; streaming audiences</li></ul></div>
   </div>
 </section>
 
@@ -171,7 +241,7 @@
   <div class="cta-over">Partner With Illinois Sponsors</div>
   <div class="cta-h">Represent Your Property.<br>Grow Your <span class="blue">Revenue.</span></div>
   <p class="cta-sub">Tell us about your property and its rights. Our team follows up within one business day.</p>
-  <div class="hero-btns"><a href="#" class="btn-hero-blue" onclick="openModal('general');return false;">Partner With Us</a><a href="contact.html" class="btn-hero-void">Contact Us</a></div>
+  <div class="hero-btns"><a href="#" class="btn-hero-blue" onclick="openModal('general');return false;">Partner With Us</a></div>
   <a href="mailto:contact@illinoissponsors.com" class="cta-email">contact@illinoissponsors.com</a>
 </section>
 
@@ -211,7 +281,7 @@
         <div class="form-row" style="margin-bottom:1px"><div class="form-field"><div class="form-label">Area of Interest <span>*</span></div><select class="modal-select" id="m-tier"><option value="">Select an area</option><option value="Corporate Partnerships">Corporate Partnerships</option><option value="Hospitality">Premium Hospitality</option><option value="Naming Rights">Naming Rights</option><option value="Multimedia">Multimedia Rights</option><option value="Licensing">Licensing</option><option value="Strategy">Commercial Strategy</option><option value="Full">Full Commercial Management</option><option value="Not sure">Not sure yet</option></select></div><div class="form-field"><div class="form-label">Timeline</div><select class="modal-select" id="m-timeline"><option value="">Select timeline</option><option value="asap">As soon as possible</option><option value="1month">Within 1 month</option><option value="3months">Within 3 months</option><option value="next-season">Next season</option><option value="exploring">Just exploring</option></select></div></div>
         <div class="form-row full"><div class="form-field"><div class="form-label">Message / Notes</div><textarea class="modal-textarea" id="m-message" placeholder="Tell us about your property, rights, and objectives..."></textarea></div></div>
         <button class="modal-submit" onclick="submitForm()">Submit Inquiry →</button>
-        <p class="modal-note">No commitment required. Our team responds within one business day.</p>
+        <p class="modal-note">Our team responds within one business day.</p>
       </div>
     </div>
     <div class="modal-success" id="modal-success">
