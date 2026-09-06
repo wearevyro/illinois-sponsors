@@ -246,3 +246,60 @@ function buildLegalPages() {
   build('privacy-content', PRIVACY_SECTIONS);
   build('terms-content',   TERMS_SECTIONS);
 }
+
+// ── PLAYON SKIN ENHANCEMENTS ──
+(function(){
+  var nav = document.querySelector('.nav');
+  var bar = document.querySelector('.po-progress');
+  function onScroll(){
+    if(nav) nav.classList.toggle('stuck', window.scrollY > 40);
+    if(bar){
+      var h = document.documentElement;
+      var p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+      bar.style.width = (p*100).toFixed(2) + '%';
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // count-up figures
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var figs = document.querySelectorAll('[data-count]');
+  if(figs.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target;
+        var target = parseFloat(el.getAttribute('data-count'));
+        var prefix = el.getAttribute('data-prefix') || '';
+        var sfx = el.getAttribute('data-suffix') || '';
+        var dec = (target % 1 !== 0) ? 1 : 0;
+        if(reduced){ el.innerHTML = prefix + target.toFixed(dec) + (sfx?'<span class="sfx">'+sfx+'</span>':''); return; }
+        var start = null, dur = 1400;
+        function step(ts){
+          if(!start) start = ts;
+          var k = Math.min(1, (ts - start) / dur);
+          var v = (target) * (1 - Math.pow(1 - k, 3));
+          el.innerHTML = prefix + v.toFixed(dec) + (sfx?'<span class="sfx">'+sfx+'</span>':'');
+          if(k < 1) requestAnimationFrame(step);
+          else el.innerHTML = prefix + target.toFixed(dec) + (sfx?'<span class="sfx">'+sfx+'</span>':'');
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:0.4});
+    figs.forEach(function(f){ io.observe(f); });
+  }
+
+  // hero headline lines: JS-driven so a JS failure leaves them visible
+  var heroLines = document.querySelectorAll('.po-hero .line > span');
+  if(heroLines.length && !reduced){
+    heroLines.forEach(function(s){ s.style.transform = 'translateY(110%)'; });
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      heroLines.forEach(function(s,i){
+        s.style.transition = 'transform .9s cubic-bezier(.16,1,.3,1) ' + (0.08 + i*0.11) + 's';
+        s.style.transform = 'translateY(0)';
+      });
+    });});
+  }
+})();
