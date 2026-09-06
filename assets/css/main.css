@@ -1205,3 +1205,11 @@ body{font-family:var(--font) !important;-webkit-font-smoothing:antialiased}
 .pf-tier{padding:0;overflow:hidden}
 .pf-tier .t-img{height:172px;background-size:cover;background-position:center}
 .pf-tier .t-body{padding:clamp(24px,3.5vw,38px);display:flex;flex-direction:column;flex:1}
+
+/* 4-up variants for High School addition */
+.po-stats.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.po-stats.four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.po-stats.four{grid-template-columns:1fr}}
+.po-grid.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.po-grid.four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.po-grid.four{grid-template-columns:1fr}}
