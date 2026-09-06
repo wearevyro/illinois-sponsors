@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /start/
+Disallow: /for-brands/
+Disallow: /for-properties/
+Disallow: /investors/
+Disallow: /thanks/
 
 Sitemap: https://illinoissponsors.com/sitemap.xml
