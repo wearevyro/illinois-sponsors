@@ -40,7 +40,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .view.active{display:block}
 .hero{position:relative;height:100vh;min-height:720px;color:white;background:#111;overflow:hidden}
 .hero-media{position:absolute;inset:0}
-.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.18) 42%,rgba(0,0,0,.78))}
+.hero-media:after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.58) 45%,rgba(0,0,0,.72) 100%)}
 .hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 0 58px}
 .hero-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .hero h1{font-size:clamp(70px,11vw,175px);line-height:.78;margin:0;max-width:1300px}
@@ -62,7 +62,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .projects{background:var(--ink);color:white;padding:0}
 .project{position:relative;min-height:82vh;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.18)}
 .project>video,.project>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.project:hover>video,.project:hover>img{transform:scale(1.035)}
+.project:hover>video,.project:hover>img{transform:none}
 .project:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.08) 68%)}
 .project-copy{position:relative;z-index:2;min-height:82vh;padding:80px 0;display:flex;flex-direction:column;justify-content:flex-end}
 .project-num{font-size:11px;font-weight:700;letter-spacing:.12em;color:#9db7ff}
@@ -338,6 +338,40 @@ body.menu-open{overflow:hidden}
   z-index:1;
 }
 
+
+/* STATIC ULTRA-HIGH-RES IMAGE SYSTEM */
+.project>img,.image-panel>img,.cta>img{
+  transform:none !important;
+  animation:none !important;
+  transition:none !important;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  will-change:auto;
+}
+.project:hover>img,.image-panel:hover>img,.cta:hover>img{transform:none !important;}
+
+.hero-media .hero-fallback{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+}
+.hero-media video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;background:transparent;
+}
+.hero-attribution{
+  position:absolute;right:18px;bottom:14px;z-index:4;color:rgba(255,255,255,.58);
+  font-size:8px;letter-spacing:.08em;text-transform:uppercase;
+}
+.page-hero.has-video .page-hero-fallback{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+}
+.page-hero.has-video video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;background:transparent;
+}
+.page-hero.has-video:after{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.58) 45%,rgba(0,0,0,.72) 100%);
+}
+.page-hero.has-video .shell{position:relative;z-index:3}
 </style>
 </head>
 <body>
@@ -386,10 +420,11 @@ body.menu-open{overflow:hidden}
 <section id="home" class="view active">
   <section class="hero">
     <div class="hero-media">
-<video autoplay muted loop playsinline preload="auto" fetchpriority="high">
-        <source src="https://videos.pexels.com/video-files/18884168/18884168-hd_1920_1080_60fps.mp4" type="video/mp4">
+      <img class="hero-fallback" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm/1280px--Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm.jpg" alt="Aerial view of Wrigley Field in Chicago">
+      <video autoplay muted loop playsinline preload="auto" poster="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm/1280px--Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm.jpg" fetchpriority="high">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8a/Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm/Drone_video_of_Wrigley_Field_-_Chicago%2C_IL_-_10.16.22.webm.720p.vp9.webm" type="video/webm">
       </video>
-      <span class="video-credit">Stock video · Pexels</span>
+      <span class="hero-attribution">Wrigley Field drone footage · Chris Cafiero · CC BY 3.0</span>
     </div>
     <div class="hero-copy">
       <div class="shell">
@@ -425,7 +460,7 @@ body.menu-open{overflow:hidden}
 
   <section class="projects">
     <article class="project">
-      <img src="assets/img/wd/wd-1.jpg" alt="Basketball game atmosphere" loading="eager">
+      <img src="https://images.unsplash.com/photo-1767016697775-001518392206?auto=format&fit=crop&w=7680&q=90" alt="Basketball arena and live game atmosphere" loading="eager" decoding="async" style="object-position:center 45%;transform:none;">
       <div class="shell project-copy">
         <div class="project-num">01 · PROPERTY COMMERCIALIZATION</div>
         <h3>TURN THE PROPERTY INTO A BUSINESS.</h3>
@@ -434,7 +469,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <img src="assets/img/wd/wd-5.jpg" alt="Fans and live sports atmosphere" loading="eager">
+      <img src="https://images.unsplash.com/photo-1781152791898-945ca008c8ef?auto=format&fit=crop&w=7680&q=90" alt="Night stadium packed with fans" loading="eager" decoding="async" style="object-position:center 52%;transform:none;">
       <div class="shell project-copy">
         <div class="project-num">02 · BRAND ACCESS</div>
         <h3>PUT BRANDS WHERE PEOPLE CARE.</h3>
@@ -443,7 +478,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <img src="assets/img/events-entertainment.webp" alt="Live sports and entertainment" loading="eager">
+      <img src="https://images.unsplash.com/photo-1682384157322-32ab3932da07?auto=format&fit=crop&w=7680&q=90" alt="Packed stadium under the lights" loading="eager" decoding="async" style="object-position:center 52%;transform:none;">
       <div class="shell project-copy">
         <div class="project-num">03 · COMMERCIAL OPERATIONS</div>
         <h3>SELLING IS ONLY HALF THE JOB.</h3>
@@ -463,13 +498,13 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="image-panel">
-      <img src="assets/img/pro-teams-venues.avif" alt="Sports venue" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1556764420-e37ef4cdfa5c?auto=format&fit=crop&w=7680&q=90" alt="Premium live sports venue atmosphere" loading="lazy" decoding="async" style="object-position:center 48%;transform:none;">
     </div>
   </section>
 
   <section class="split-section">
     <div class="image-panel">
-      <img src="assets/img/corporate-brands.png" alt="Brand partnership activation" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1583079806406-91731880e785?auto=format&fit=crop&w=7680&q=90" alt="College basketball crowd and game experience" loading="lazy" decoding="async" style="object-position:center 48%;transform:none;">
     </div>
     <div class="split-panel white">
       <div class="eyebrow">FOR BRANDS</div>
@@ -496,7 +531,7 @@ body.menu-open{overflow:hidden}
   </section>
 
   <section class="cta">
-    <img src="assets/img/wd/wd-7.jpg" alt="Live event crowd and sports experience" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1684375943560-aef223061930?auto=format&fit=crop&w=7680&q=90" alt="Arena crowd and premium live sports environment" loading="lazy" decoding="async" style="object-position:center 50%;transform:none;">
     <div class="shell">
       <div class="eyebrow" style="color:#9db7ff">START A CONVERSATION</div>
       <h2 class="display">BUILD THE COMMERCIAL SIDE PROPERLY.</h2>
@@ -535,11 +570,7 @@ body.menu-open{overflow:hidden}
 </section>
 
 <section id="rights" class="view">
-  <section class="page-hero has-video" style="">
-    <video autoplay muted loop playsinline preload="none">
-      <source data-src="https://assets.mixkit.co/videos/preview/mixkit-man-playing-basketball-2288-large.mp4" type="video/mp4">
-    </video>
-    <div class="shell"><div class="eyebrow" style="color:#9db7ff">THE INVENTORY</div><h1 class="display">RIGHTS.</h1><p>We build commercial inventory across media, partnerships, naming, hospitality, content, experiences, and community.</p></div>
+  <section class="page-hero has-video" style=""><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-1.jpg" alt="Packed basketball arena"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-1.jpg"><source src="https://www.pexels.com/download/video/18884168/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">THE INVENTORY</div><h1 class="display">RIGHTS.</h1><p>We build commercial inventory across media, partnerships, naming, hospitality, content, experiences, and community.</p></div>
   </section>
   <section class="page-section"><div class="shell">
     <h2 class="display">WHAT CAN BE COMMERCIALIZED?</h2>
@@ -552,11 +583,7 @@ body.menu-open{overflow:hidden}
 </section>
 
 <section id="about" class="view">
-  <section class="page-hero has-video">
-    <video autoplay muted loop playsinline preload="none">
-      <source data-src="https://assets.mixkit.co/videos/preview/mixkit-amateur-basketball-player-doing-a-slam-dunk-2273-large.mp4" type="video/mp4">
-    </video>
-    <div class="shell"><div class="eyebrow" style="color:#9db7ff">ABOUT ILLINOIS SPONSORS</div><h1 class="display">LOCAL KNOWLEDGE. COMMERCIAL DISCIPLINE.</h1><p>Illinois Sponsors is built around one idea: Illinois properties deserve a commercial operator that understands the market and can run the entire revenue function.</p></div>
+  <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp" alt="Crowded illuminated stadium"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp"><source src="https://www.pexels.com/download/video/3722209/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">ABOUT ILLINOIS SPONSORS</div><h1 class="display">LOCAL KNOWLEDGE. COMMERCIAL DISCIPLINE.</h1><p>Illinois Sponsors is built around one idea: Illinois properties deserve a commercial operator that understands the market and can run the entire revenue function.</p></div>
   </section>
   <section class="page-section"><div class="shell"><h2 class="display">WE DO THE COMMERCIAL WORK.</h2><div class="cards">
     <article class="card"><span class="n">01</span><h3>STRATEGY</h3><p>Build the commercial model before selling anything.</p></article>
@@ -566,11 +593,7 @@ body.menu-open{overflow:hidden}
 </section>
 
 <section id="contact" class="view">
-  <section class="page-hero has-video">
-    <video autoplay muted loop playsinline preload="none">
-      <source data-src="https://assets.mixkit.co/videos/preview/mixkit-boys-playing-basketball-4176-large.mp4" type="video/mp4">
-    </video>
-    <div class="shell"><div class="eyebrow" style="color:#9db7ff">NEW BUSINESS</div><h1 class="display">LET'S BUILD IT.</h1><p>Tell us whether you are a property looking for a commercial operator or a brand looking for access.</p></div>
+  <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-7.jpg" alt="Energetic stadium crowd"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-7.jpg"><source src="https://www.pexels.com/download/video/4036306/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">NEW BUSINESS</div><h1 class="display">LET'S BUILD IT.</h1><p>Tell us whether you are a property looking for a commercial operator or a brand looking for access.</p></div>
   </section>
   <section class="page-section"><div class="shell"><div class="contact-panel">
     <div><h3>START A CONVERSATION.</h3><p style="font-size:18px;line-height:1.65;color:#626a78">Illinois Sponsors works with sports properties, events, venues, schools, community platforms, and brands looking to build meaningful partnerships in Illinois.</p><p><strong>contact@illinoissponsors.com</strong></p></div>
@@ -701,6 +724,30 @@ allVideos.forEach((video)=>{
   });
 });
 
+
+function ensureActiveHeroVideo(id){
+  const section = document.getElementById(id);
+  if(!section) return;
+  const video = section.querySelector('.hero video, .page-hero video');
+  if(!video) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.playbackRate = 1;
+  const source = video.querySelector('source');
+  if(source && !source.src && source.dataset.src){
+    source.src = source.dataset.src;
+    source.removeAttribute('data-src');
+    video.load();
+  }
+  const p = video.play();
+  if(p && typeof p.catch === 'function') p.catch(()=>{});
+}
+document.querySelectorAll('[data-page]').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    requestAnimationFrame(()=>ensureActiveHeroVideo(link.dataset.page));
+  });
+});
 </script>
 </body>
 </html>
