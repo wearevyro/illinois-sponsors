@@ -425,7 +425,7 @@ body.menu-open{overflow:hidden}
 
   <section class="projects">
     <article class="project">
-      <video autoplay muted loop playsinline preload="none" aria-label="Live basketball crowd"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-basketball-player-dunking-training-a-court-alone-44456-large.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="auto" aria-label="Live basketball crowd"><source src="https://assets.mixkit.co/videos/preview/mixkit-basketball-player-dunking-training-a-court-alone-44456-large.mp4" type="video/mp4"></video>
       <div class="shell project-copy">
         <div class="project-num">01 · PROPERTY COMMERCIALIZATION</div>
         <h3>TURN THE PROPERTY INTO A BUSINESS.</h3>
@@ -434,7 +434,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <video autoplay muted loop playsinline preload="none" aria-label="Cheering sports crowd"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-crowd-cheering-at-the-stadium-9585-large.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="auto" aria-label="Cheering sports crowd"><source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-cheering-at-the-stadium-9585-large.mp4" type="video/mp4"></video>
       <div class="shell project-copy">
         <div class="project-num">02 · BRAND ACCESS</div>
         <h3>PUT BRANDS WHERE PEOPLE CARE.</h3>
@@ -443,7 +443,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <video autoplay muted loop playsinline preload="none" aria-label="Goal celebration"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-goal-play-in-a-semi-professional-soccer-game-43499-large.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="auto" aria-label="Goal celebration"><source src="https://assets.mixkit.co/videos/preview/mixkit-goal-play-in-a-semi-professional-soccer-game-43499-large.mp4" type="video/mp4"></video>
       <div class="shell project-copy">
         <div class="project-num">03 · COMMERCIAL OPERATIONS</div>
         <h3>SELLING IS ONLY HALF THE JOB.</h3>
@@ -463,13 +463,13 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="image-panel">
-      <video autoplay muted loop playsinline preload="none" aria-label="Night stadium atmosphere"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-football-stadium-aerial-shot-4262-large.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="auto" aria-label="Night stadium atmosphere"><source src="https://assets.mixkit.co/videos/preview/mixkit-football-stadium-aerial-shot-4262-large.mp4" type="video/mp4"></video>
     </div>
   </section>
 
   <section class="split-section">
     <div class="image-panel">
-      <video autoplay muted loop playsinline preload="none" aria-label="Packed baseball stadium"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-walking-the-court-of-a-stadium-ready-for-the-game-30312-large.mp4" type="video/mp4"></video>
+      <video autoplay muted loop playsinline preload="auto" aria-label="Packed baseball stadium"><source src="https://assets.mixkit.co/videos/preview/mixkit-walking-the-court-of-a-stadium-ready-for-the-game-30312-large.mp4" type="video/mp4"></video>
     </div>
     <div class="split-panel white">
       <div class="eyebrow">FOR BRANDS</div>
@@ -496,7 +496,7 @@ body.menu-open{overflow:hidden}
   </section>
 
   <section class="cta">
-    <video autoplay muted loop playsinline preload="none" aria-label="Energetic stadium celebration"><source data-src="https://assets.mixkit.co/videos/preview/mixkit-stadium-packed-with-public-dressed-in-yellow-uniform-30326-large.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline preload="auto" aria-label="Energetic stadium celebration"><source src="https://assets.mixkit.co/videos/preview/mixkit-stadium-packed-with-public-dressed-in-yellow-uniform-30326-large.mp4" type="video/mp4"></video>
     <div class="shell">
       <div class="eyebrow" style="color:#9db7ff">START A CONVERSATION</div>
       <h2 class="display">BUILD THE COMMERCIAL SIDE PROPERLY.</h2>
@@ -659,9 +659,9 @@ function loadVideo(video){
   if(attempt && typeof attempt.catch === 'function') attempt.catch(()=>{});
 }
 
-allVideos.forEach((video,index)=>{
+allVideos.forEach((video)=>{
   prepVideo(video);
-  if(index === 0){
+  if(video.closest('#home')){
     video.dataset.loaded = 'true';
     const attempt = video.play();
     if(attempt && typeof attempt.catch === 'function') attempt.catch(()=>{});
@@ -677,8 +677,8 @@ const lazyVideoObserver = new IntersectionObserver((entries)=>{
   });
 },{rootMargin:'500px 0px'});
 
-allVideos.forEach((video,index)=>{
-  if(index > 0) lazyVideoObserver.observe(video);
+allVideos.forEach((video)=>{
+  if(!video.closest('#home')) lazyVideoObserver.observe(video);
 });
 
 document.addEventListener('pointerdown',()=>{
