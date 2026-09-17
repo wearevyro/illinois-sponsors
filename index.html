@@ -61,8 +61,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .text-link{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid;padding-bottom:6px}
 .projects{background:var(--ink);color:white;padding:0}
 .project{position:relative;min-height:82vh;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.18)}
-.project>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.project:hover>video{transform:scale(1.035)}
+.project>video,.project>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.project:hover>video,.project:hover>img{transform:scale(1.035)}
 .project:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.08) 68%)}
 .project-copy{position:relative;z-index:2;min-height:82vh;padding:80px 0;display:flex;flex-direction:column;justify-content:flex-end}
 .project-num{font-size:11px;font-weight:700;letter-spacing:.12em;color:#9db7ff}
@@ -77,7 +77,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .split-panel h3{font-size:clamp(56px,6vw,96px);line-height:.82;margin:0}
 .split-panel p{max-width:520px;font-size:17px;line-height:1.6}
 .split-panel .text-link{width:max-content}
-.image-panel{min-height:720px}
+.image-panel{min-height:720px;position:relative;overflow:hidden}.image-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rights{padding:120px 0;background:white}
 .rights-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
 .rights-head h2{font-size:clamp(58px,7vw,108px);line-height:.82;margin:0}
@@ -88,7 +88,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .right-row h4{font-family:"Archivo Black";text-transform:uppercase;font-size:25px;letter-spacing:-.04em;margin:0}
 .right-row p{margin:0;color:#626a78;line-height:1.55}
 .arrow{font-size:28px}
-.cta{min-height:76vh;position:relative;color:white;display:flex;align-items:end}
+.cta{min-height:76vh;position:relative;color:white;display:flex;align-items:end;overflow:hidden}.cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cta:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.12))}
 .cta .shell{position:relative;z-index:2;padding-bottom:62px}
 .cta h2{font-size:clamp(62px,9vw,138px);line-height:.79;margin:0;max-width:1200px}
@@ -425,7 +425,7 @@ body.menu-open{overflow:hidden}
 
   <section class="projects">
     <article class="project">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Live basketball crowd"><source src="https://assets.mixkit.co/videos/preview/mixkit-basketball-player-dunking-training-a-court-alone-44456-large.mp4" type="video/mp4"></video>
+      <img src="assets/img/wd/wd-1.jpg" alt="Basketball game atmosphere" loading="eager">
       <div class="shell project-copy">
         <div class="project-num">01 · PROPERTY COMMERCIALIZATION</div>
         <h3>TURN THE PROPERTY INTO A BUSINESS.</h3>
@@ -434,7 +434,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Cheering sports crowd"><source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-cheering-at-the-stadium-9585-large.mp4" type="video/mp4"></video>
+      <img src="assets/img/wd/wd-5.jpg" alt="Fans and live sports atmosphere" loading="eager">
       <div class="shell project-copy">
         <div class="project-num">02 · BRAND ACCESS</div>
         <h3>PUT BRANDS WHERE PEOPLE CARE.</h3>
@@ -443,7 +443,7 @@ body.menu-open{overflow:hidden}
       </div>
     </article>
     <article class="project">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Goal celebration"><source src="https://assets.mixkit.co/videos/preview/mixkit-goal-play-in-a-semi-professional-soccer-game-43499-large.mp4" type="video/mp4"></video>
+      <img src="assets/img/events-entertainment.webp" alt="Live sports and entertainment" loading="eager">
       <div class="shell project-copy">
         <div class="project-num">03 · COMMERCIAL OPERATIONS</div>
         <h3>SELLING IS ONLY HALF THE JOB.</h3>
@@ -463,13 +463,13 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="image-panel">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Night stadium atmosphere"><source src="https://assets.mixkit.co/videos/preview/mixkit-football-stadium-aerial-shot-4262-large.mp4" type="video/mp4"></video>
+      <img src="assets/img/pro-teams-venues.avif" alt="Sports venue" loading="lazy">
     </div>
   </section>
 
   <section class="split-section">
     <div class="image-panel">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Packed baseball stadium"><source src="https://assets.mixkit.co/videos/preview/mixkit-walking-the-court-of-a-stadium-ready-for-the-game-30312-large.mp4" type="video/mp4"></video>
+      <img src="assets/img/corporate-brands.png" alt="Brand partnership activation" loading="lazy">
     </div>
     <div class="split-panel white">
       <div class="eyebrow">FOR BRANDS</div>
@@ -496,7 +496,7 @@ body.menu-open{overflow:hidden}
   </section>
 
   <section class="cta">
-    <video autoplay muted loop playsinline preload="auto" aria-label="Energetic stadium celebration"><source src="https://assets.mixkit.co/videos/preview/mixkit-stadium-packed-with-public-dressed-in-yellow-uniform-30326-large.mp4" type="video/mp4"></video>
+    <img src="assets/img/wd/wd-7.jpg" alt="Live event crowd and sports experience" loading="lazy">
     <div class="shell">
       <div class="eyebrow" style="color:#9db7ff">START A CONVERSATION</div>
       <h2 class="display">BUILD THE COMMERCIAL SIDE PROPERLY.</h2>
@@ -636,7 +636,7 @@ document.addEventListener('keydown',e=>{
 });
 
 
-const allVideos = document.querySelectorAll('video');
+const allVideos = document.querySelectorAll('.hero video, .page-hero video');
 
 function prepVideo(video){
   video.muted = true;
