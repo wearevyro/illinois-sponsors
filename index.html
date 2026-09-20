@@ -52,8 +52,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 0 58px}
 .hero-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .hero h1{font-size:clamp(70px,11vw,175px);line-height:.78;margin:0;max-width:1300px}
-.hero-rotate{height:34px;margin-top:18px;display:flex;align-items:center;overflow:hidden;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(17px,2vw,28px);line-height:1;text-transform:uppercase;letter-spacing:-.03em;color:#9db7ff}
-.hero-rotate-word{display:block;white-space:nowrap}
+.hero-title-rotate{display:inline-block;overflow:hidden;vertical-align:bottom;line-height:.82}
+.hero-title-rotate-word{display:inline-block;white-space:nowrap}
 .hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:34px;gap:30px}
 .hero-bottom p{max-width:560px;font-size:17px;line-height:1.6;margin:0;color:rgba(255,255,255,.8)}
 .circle-link{width:110px;height:110px;border-radius:999px;border:1px solid rgba(255,255,255,.8);display:grid;place-items:center;font-weight:700;font-size:11px;text-transform:uppercase;transition:.25s}
@@ -434,8 +434,7 @@ body.menu-open{overflow:hidden}
     <div class="hero-copy">
       <div class="shell">
         <div class="hero-kicker">SPORT · ENTERTAINMENT · COMMERCIAL RIGHTS</div>
-        <h1 class="display">WE RUN THE COMMERCIAL GAME.</h1>
-        <div class="hero-rotate" aria-live="polite"><span class="hero-rotate-word" id="heroRotateWord">COMMERCIAL RIGHTS</span></div>
+        <h1 class="display">WE RUN THE<br><span class="hero-title-rotate" aria-live="polite"><span class="hero-title-rotate-word" id="heroRotateWord">COMMERCIAL</span></span><br>GAME.</h1>
         <div class="hero-bottom">
           <p>We build and operate the revenue side of sports properties. Partnerships, media rights, hospitality, activation, measurement, and renewal under one commercial system.</p>
           <a class="circle-link" href="#" data-page="properties">Explore<br>the model</a>
@@ -638,7 +637,7 @@ body.menu-open{overflow:hidden}
 </footer>
 
 <script>
-const rotatingTerms = ['COMMERCIAL RIGHTS','PARTNERSHIPS','SPONSORSHIPS','MEDIA','ADVERTISING','MARKETING'];
+const rotatingTerms = ['COMMERCIAL','PARTNERSHIP','SPONSORSHIP','MEDIA','ADVERTISING','MARKETING'];
 const rotatingWord = document.getElementById('heroRotateWord');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(rotatingWord && !reduceMotion){
