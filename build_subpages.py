@@ -18,40 +18,20 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-<div class="util"><strong>Illinois Sponsors</strong><span>Sports · Media · Sponsorship · Advisory</span><strong>contact@illinoissponsors.com</strong></div>
-<nav class="nav">
-  <a href="/index.html" class="nav-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a>
+<div class="util"><strong>WERBUNG</strong><span>Commercial Rights · Partnerships · Media</span><strong>contact@illinoissponsors.com</strong></div>
+<nav class="nav" id="siteNav">
+  <a href="/index.html" class="nav-logo" aria-label="WERBUNG home"><span class="logo-il">WERBUNG</span></a>
   <ul class="nav-links">
-    <li class="has-sub"><a href="/what-we-do.html">What We Do</a>
-      <ul class="sub">
-        <li><a href="/what-we-do/media/">Media</a></li>
-        <li><a href="/what-we-do/sponsorship/">Sponsorship</a></li>
-        <li><a href="/what-we-do/advisory/">Advisory &amp; Services</a></li>
-      </ul>
-    </li>
-    <li class="has-sub"><a href="/who-we-serve.html">Who We Serve</a>
-      <ul class="sub">
-        <li><a href="/who-we-serve/pro/">Pro</a></li>
-        <li><a href="/who-we-serve/college/">College</a></li>
-        <li><a href="/who-we-serve/youth/">Youth</a></li>
-        <li><a href="/who-we-serve/brands/">Brands</a></li>
-      </ul>
-    </li>
+    <li><a href="/what-we-do.html">What We Do</a></li>
+    <li><a href="/who-we-serve.html">Who We Serve</a></li>
+    <li><a href="/illinois-sponsors.html">Illinois Sponsors</a></li>
     <li><a href="/how-we-win.html">How We Win</a></li>
     <li><a href="/catalog.html">Catalog</a></li>
-    <li><a href="/thought-leadership.html">Thought Leadership</a></li>
-    <li><a href="/news.html">News</a></li>
-    <li class="has-sub"><a href="/about.html">About</a>
-      <ul class="sub">
-        <li><a href="/about/mission/">Our Mission</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-      </ul>
-    </li>
-    <li><a href="/careers.html">Careers</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#" class="btn-blue" onclick="openModal('{tier}');return false;">Partner With Us</a>
+    <a href="#" class="btn-blue" onclick="openModal('general');return false;">Partner With Us</a>
   </div>
 </nav>
 """
@@ -59,33 +39,33 @@ HEAD = """<!DOCTYPE html>
 FOOTER = """<footer class="footer">
   <div class="footer-grid">
     <div>
-      <a href="/index.html" class="f-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a>
-      <p class="f-desc">Your brand expansion team. We help brands enter and grow across sports, music, and entertainment through licensing, NIL, sponsorships, and strategic partnerships.</p>
+      <a href="/index.html" class="f-logo" aria-label="WERBUNG home"><span class="logo-il">WERBUNG</span></a>
+      <p class="f-desc">WERBUNG operates commercial rights, partnerships, sponsorships, media, hospitality, licensing, activation, strategy, and revenue operations across sports and entertainment.</p>
+      <p class="f-desc" style="margin-top:14px"><a href="/illinois-sponsors.html">Illinois Sponsors</a> · A WERBUNG Market</p>
     </div>
-    <div class="f-col"><h5>What We Do</h5><ul>
-      <li><a href="/what-we-do/media/">Media</a></li>
-      <li><a href="/what-we-do/sponsorship/">Sponsorship</a></li>
-      <li><a href="/what-we-do/advisory/">Advisory &amp; Services</a></li>
+    <div class="f-col"><h5>Explore</h5><ul>
+      <li><a href="/what-we-do.html">What We Do</a></li>
+      <li><a href="/who-we-serve.html">Who We Serve</a></li>
+      <li><a href="/illinois-sponsors.html">Illinois Sponsors</a></li>
+      <li><a href="/schools.html">High School</a></li>
+      <li><a href="/how-we-win.html">How We Win</a></li>
       <li><a href="/catalog.html">Catalog</a></li>
-    </ul></div>
-    <div class="f-col"><h5>Who We Serve</h5><ul>
-      <li><a href="/who-we-serve/pro/">Pro</a></li>
-      <li><a href="/who-we-serve/college/">College</a></li>
-      <li><a href="/who-we-serve/youth/">Youth</a></li>
-      <li><a href="/who-we-serve/brands/">Brands</a></li>
     </ul></div>
     <div class="f-col"><h5>Company</h5><ul>
       <li><a href="/about.html">About</a></li>
-      <li><a href="/about/mission/">Our Mission</a></li>
-      <li><a href="/how-we-win.html">How We Win</a></li>
-      <li><a href="/thought-leadership.html">Thought Leadership</a></li>
       <li><a href="/news.html">News</a></li>
+      <li><a href="/thought-leadership.html">Thought Leadership</a></li>
       <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul></div>
+    <div class="f-col"><h5>Get in Touch</h5><ul>
       <li><a href="/contact.html">Contact</a></li>
+      <li><a href="#" onclick="openModal('general');return false;">Partner With Us</a></li>
+      <li><a href="mailto:contact@illinoissponsors.com">contact@illinoissponsors.com</a></li>
     </ul></div>
   </div>
   <div class="footer-legal"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
-  <div class="footer-base"><p>© 2026 Illinois Sponsors. All rights reserved.</p><p>Sports · Media · Sponsorship · Advisory</p></div>
+  <div class="footer-base"><p>© 2026 WERBUNG. All rights reserved.</p><p>Illinois Sponsors · A WERBUNG Market</p></div>
 </footer>
 <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
   <div class="modal">
