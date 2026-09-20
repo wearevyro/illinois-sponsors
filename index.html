@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Illinois Sponsors | Commercial Rights & Partnerships</title>
+<title>WERBUNG | Commercial Rights & Partnerships</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .header-inner{height:92px;display:flex;align-items:center;gap:30px}
 .logo{font-family:"Archivo Black";font-size:18px;line-height:.82;letter-spacing:-.06em;margin-right:auto}
 .logo span{display:block}
-.nav{display:flex;gap:26px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.nav{display:flex;gap:18px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .nav a{opacity:.82}
 .nav a:hover{opacity:1}
 
@@ -44,6 +44,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 0 58px}
 .hero-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .hero h1{font-size:clamp(70px,11vw,175px);line-height:.78;margin:0;max-width:1300px}
+.hero-rotate{height:34px;margin-top:18px;display:flex;align-items:center;overflow:hidden;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(17px,2vw,28px);line-height:1;text-transform:uppercase;letter-spacing:-.03em;color:#9db7ff}
+.hero-rotate-word{display:block;white-space:nowrap}
 .hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:34px;gap:30px}
 .hero-bottom p{max-width:560px;font-size:17px;line-height:1.6;margin:0;color:rgba(255,255,255,.8)}
 .circle-link{width:110px;height:110px;border-radius:999px;border:1px solid rgba(255,255,255,.8);display:grid;place-items:center;font-weight:700;font-size:11px;text-transform:uppercase;transition:.25s}
@@ -379,13 +381,15 @@ body.menu-open{overflow:hidden}
 <div class="topbar"><div class="shell"><span>COMMERCIAL RIGHTS · PARTNERSHIPS · MEDIA</span><span>ILLINOIS, USA</span></div></div>
 <header class="header">
   <div class="shell header-inner">
-    <a href="#" class="logo" data-page="home"><span>ILLINOIS</span><span>SPONSORS</span></a>
+    <a href="#" class="logo" data-page="home" aria-label="WERBUNG home"><span>WERBUNG</span></a>
     <nav class="nav">
-      <a href="#" data-page="properties">Properties</a>
-      <a href="#" data-page="brands">Brands</a>
-      <a href="#" data-page="rights">Rights</a>
-      <a href="#" data-page="about">About</a>
-      <a href="#" data-page="contact">Contact</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="who-we-serve.html">Who We Serve</a>
+      <a href="#" data-page="illinois">Illinois Sponsors</a>
+      <a href="how-we-win.html">How We Win</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <a class="desktop-cta" href="#" data-page="contact">Partner With Us</a>
     <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
@@ -402,15 +406,16 @@ body.menu-open{overflow:hidden}
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">CLOSE ×</button>
     </div>
     <nav class="mobile-menu-nav">
-      <a href="#" data-page="home"><span>01</span>Home</a>
-      <a href="#" data-page="properties"><span>02</span>Properties</a>
-      <a href="#" data-page="brands"><span>03</span>Brands</a>
-      <a href="#" data-page="rights"><span>04</span>Rights</a>
-      <a href="#" data-page="about"><span>05</span>About</a>
-      <a href="#" data-page="contact"><span>06</span>Contact</a>
+      <a href="what-we-do.html"><span>01</span>What We Do</a>
+      <a href="who-we-serve.html"><span>02</span>Who We Serve</a>
+      <a href="#" data-page="illinois"><span>03</span>Illinois Sponsors</a>
+      <a href="how-we-win.html"><span>04</span>How We Win</a>
+      <a href="catalog.html"><span>05</span>Catalog</a>
+      <a href="about.html"><span>06</span>About</a>
+      <a href="contact.html"><span>07</span>Contact</a>
     </nav>
     <div class="mobile-menu-footer">
-      <div>ILLINOIS · SPORT · ENTERTAINMENT</div>
+      <div>WERBUNG · SPORT · ENTERTAINMENT</div>
       <div>COMMERCIAL RIGHTS</div>
     </div>
   </div>
@@ -428,8 +433,9 @@ body.menu-open{overflow:hidden}
     </div>
     <div class="hero-copy">
       <div class="shell">
-        <div class="hero-kicker">ILLINOIS SPORT · ENTERTAINMENT · COMMERCIAL RIGHTS</div>
+        <div class="hero-kicker">SPORT · ENTERTAINMENT · COMMERCIAL RIGHTS</div>
         <h1 class="display">WE RUN THE COMMERCIAL GAME.</h1>
+        <div class="hero-rotate" aria-live="polite"><span class="hero-rotate-word" id="heroRotateWord">COMMERCIAL RIGHTS</span></div>
         <div class="hero-bottom">
           <p>We build and operate the revenue side of sports properties. Partnerships, media rights, hospitality, activation, measurement, and renewal under one commercial system.</p>
           <a class="circle-link" href="#" data-page="properties">Explore<br>the model</a>
@@ -452,7 +458,7 @@ body.menu-open{overflow:hidden}
         <h2 class="display">ONE MARKET. ONE OPERATOR.</h2>
       </div>
       <div class="intro-copy">
-        <p>Illinois Sponsors exists for properties that deserve more than logo placement and disconnected sponsorship sales. We turn audience, access, content, community, and live experiences into commercial inventory brands can actually buy.</p>
+        <p>WERBUNG exists for properties that deserve more than logo placement and disconnected sponsorship sales. We turn audience, access, content, community, and live experiences into commercial inventory brands can actually buy.</p>
         <a href="#" class="text-link" data-page="about">How we operate ↗</a>
       </div>
     </div>
@@ -493,7 +499,7 @@ body.menu-open{overflow:hidden}
       <div class="eyebrow" style="color:white">FOR PROPERTIES</div>
       <h3 class="display">YOUR PROPERTY SHOULD HAVE A REVENUE DEPARTMENT.</h3>
       <div>
-        <p>Illinois Sponsors can become that department without forcing the property to build a full internal commercial team.</p>
+        <p>WERBUNG can become that department without forcing the property to build a full internal commercial team.</p>
         <a href="#" class="text-link" data-page="properties">Property model ↗</a>
       </div>
     </div>
@@ -582,8 +588,18 @@ body.menu-open{overflow:hidden}
   </div></section>
 </section>
 
+
+<section id="illinois" class="view">
+  <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp" alt="Illinois sports and entertainment"><div class="shell"><div class="eyebrow" style="color:#9db7ff">A WERBUNG MARKET</div><h1 class="display">ILLINOIS SPONSORS.</h1><p>Illinois Sponsors is WERBUNG’s Illinois market platform across professional sports, college athletics, high school athletics, youth and club sports, events, tournaments, venues, entertainment, brands, commercial rights, and sponsorship opportunities.</p></div></section>
+  <section class="page-section"><div class="shell"><h2 class="display">THE ILLINOIS MARKET.</h2><div class="cards">
+    <article class="card"><span class="n">01</span><h3>SPORT</h3><p>Professional, college, high school, youth, club, tournaments, and events across Illinois.</p><a href="who-we-serve.html">Who We Serve ↗</a></article>
+    <article class="card"><span class="n">02</span><h3>RIGHTS</h3><p>Commercial rights, sponsorship inventory, media, hospitality, naming, activation, and licensing.</p><a href="catalog.html">View Catalog ↗</a></article>
+    <article class="card"><span class="n">03</span><h3>HIGH SCHOOL</h3><p>High School remains a dedicated Illinois Sponsors program for schools, conferences, tournaments, and commercial partnerships.</p><a href="schools.html">High School ↗</a></article>
+  </div></div></section>
+</section>
+
 <section id="about" class="view">
-  <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp" alt="Crowded illuminated stadium"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp"><source src="https://www.pexels.com/download/video/3722209/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">ABOUT ILLINOIS SPONSORS</div><h1 class="display">LOCAL KNOWLEDGE. COMMERCIAL DISCIPLINE.</h1><p>Illinois Sponsors is built around one idea: Illinois properties deserve a commercial operator that understands the market and can run the entire revenue function.</p></div>
+  <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp" alt="Crowded illuminated stadium"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/events-entertainment.webp"><source src="https://www.pexels.com/download/video/3722209/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">ABOUT WERBUNG</div><h1 class="display">COMMERCIAL RIGHTS. ONE OPERATOR.</h1><p>WERBUNG runs the commercial side of sports and entertainment properties across rights, partnerships, media, hospitality, licensing, activation, strategy, and revenue operations.</p></div>
   </section>
   <section class="page-section"><div class="shell"><h2 class="display">WE DO THE COMMERCIAL WORK.</h2><div class="cards">
     <article class="card"><span class="n">01</span><h3>STRATEGY</h3><p>Build the commercial model before selling anything.</p></article>
@@ -596,7 +612,7 @@ body.menu-open{overflow:hidden}
   <section class="page-hero has-video"><img class="page-hero-fallback" src="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-7.jpg" alt="Energetic stadium crowd"><video autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wearevyro/illinois-sponsors/main/assets/img/wd/wd-7.jpg"><source src="https://www.pexels.com/download/video/4036306/" type="video/mp4"></video><div class="shell"><div class="eyebrow" style="color:#9db7ff">NEW BUSINESS</div><h1 class="display">LET'S BUILD IT.</h1><p>Tell us whether you are a property looking for a commercial operator or a brand looking for access.</p></div>
   </section>
   <section class="page-section"><div class="shell"><div class="contact-panel">
-    <div><h3>START A CONVERSATION.</h3><p style="font-size:18px;line-height:1.65;color:#626a78">Illinois Sponsors works with sports properties, events, venues, schools, community platforms, and brands looking to build meaningful partnerships in Illinois.</p><p><strong>contact@illinoissponsors.com</strong></p></div>
+    <div><h3>START A CONVERSATION.</h3><p style="font-size:18px;line-height:1.65;color:#626a78">WERBUNG works with sports properties, events, venues, schools, community platforms, and brands. Illinois Sponsors remains WERBUNG’s Illinois market platform.</p><p><strong>contact@illinoissponsors.com</strong></p></div>
     <div><form class="form" onsubmit="event.preventDefault();document.getElementById('success').style.display='block'">
       <input placeholder="Name" required>
       <input placeholder="Email" type="email" required>
@@ -612,16 +628,36 @@ body.menu-open{overflow:hidden}
 <footer class="footer">
   <div class="shell">
     <div class="footer-top">
-      <div class="footer-logo">ILLINOIS<br>SPONSORS</div>
-      <div><h5>Explore</h5><a href="#" data-page="properties">Properties</a><a href="#" data-page="brands">Brands</a><a href="#" data-page="rights">Rights</a></div>
-      <div><h5>Company</h5><a href="#" data-page="about">About</a><a href="#" data-page="contact">Contact</a></div>
-      <div><h5>New Business</h5><p>contact@illinoissponsors.com</p><p>Illinois, USA</p></div>
+      <div><div class="footer-logo">WERBUNG</div><p style="margin-top:18px">Illinois Sponsors · A WERBUNG Market</p></div>
+      <div><h5>Explore</h5><a href="what-we-do.html">What We Do</a><a href="who-we-serve.html">Who We Serve</a><a href="#" data-page="illinois">Illinois Sponsors</a><a href="schools.html">High School</a><a href="how-we-win.html">How We Win</a><a href="catalog.html">Catalog</a></div>
+      <div><h5>Company</h5><a href="about.html">About</a><a href="news.html">News</a><a href="thought-leadership.html">Thought Leadership</a><a href="careers.html">Careers</a><a href="faq.html">FAQ</a></div>
+      <div><h5>New Business</h5><a href="contact.html">Contact</a><a href="#" data-page="contact">Partner With Us</a><p>contact@illinoissponsors.com</p><p>Illinois, USA</p></div>
     </div>
-    <div class="footer-bottom"><span>ILLINOIS SPORTS · COMMERCIAL RIGHTS</span><span>© 2026 ILLINOIS SPONSORS</span></div>
+    <div class="footer-bottom"><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></span><span>© 2026 WERBUNG</span></div>
   </div>
 </footer>
 
 <script>
+const rotatingTerms = ['COMMERCIAL RIGHTS','PARTNERSHIPS','SPONSORSHIPS','MEDIA','ADVERTISING','MARKETING'];
+const rotatingWord = document.getElementById('heroRotateWord');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(rotatingWord && !reduceMotion){
+  let rotatingIndex = 0;
+  setInterval(()=>{
+    rotatingIndex = (rotatingIndex + 1) % rotatingTerms.length;
+    rotatingWord.animate(
+      [{transform:'translateY(0)',opacity:1},{transform:'translateY(-120%)',opacity:0}],
+      {duration:260,easing:'ease',fill:'forwards'}
+    ).onfinish = ()=>{
+      rotatingWord.textContent = rotatingTerms[rotatingIndex];
+      rotatingWord.animate(
+        [{transform:'translateY(120%)',opacity:0},{transform:'translateY(0)',opacity:1}],
+        {duration:300,easing:'ease',fill:'forwards'}
+      );
+    };
+  },1700);
+}
+
 const links = document.querySelectorAll('[data-page]');
 const views = document.querySelectorAll('.view');
 function showPage(id){
