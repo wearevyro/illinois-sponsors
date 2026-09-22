@@ -1213,3 +1213,10 @@ body{font-family:var(--font) !important;-webkit-font-smoothing:antialiased}
 .po-grid.four{grid-template-columns:repeat(4,1fr)}
 @media(max-width:1000px){.po-grid.four{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.po-grid.four{grid-template-columns:1fr}}
+
+
+/* WERBUNG BRAND SWAP ONLY */
+.nav-logo{width:170px;height:32px;display:block;flex-shrink:0;background:url('/assets/img/werbung-logo.png') left center/contain no-repeat}
+.nav-logo .logo-il,.nav-logo .logo-sp{display:none}
+.f-logo{width:170px;height:32px;display:block;background:url('/assets/img/werbung-logo.png') left center/contain no-repeat;filter:invert(1)}
+.f-logo .logo-il,.f-logo .logo-sp{display:none}
