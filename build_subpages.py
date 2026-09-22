@@ -18,9 +18,9 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-<div class="util"><strong>Illinois Sponsors</strong><span>Sports · Media · Sponsorship · Advisory</span><strong>contact@illinoissponsors.com</strong></div>
+<div class="util"><strong>WERBUNG</strong><span>Sports · Media · Sponsorship · Advisory</span><strong>contact@illinoissponsors.com</strong></div>
 <nav class="nav">
-  <a href="/index.html" class="nav-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a>
+  <a href="/index.html" class="nav-logo"><img src="/assets/img/werbung-logo.png" alt="WERBUNG"></a>
   <ul class="nav-links">
     <li class="has-sub"><a href="/what-we-do.html">What We Do</a>
       <ul class="sub">
@@ -59,7 +59,7 @@ HEAD = """<!DOCTYPE html>
 FOOTER = """<footer class="footer">
   <div class="footer-grid">
     <div>
-      <a href="/index.html" class="f-logo"><span class="logo-il">ILLINOIS</span><span class="logo-sp">SPONSORS</span></a>
+      <a href="/index.html" class="f-logo"><img src="/assets/img/werbung-logo.png" alt="WERBUNG"></a>
       <p class="f-desc">Your brand expansion team. We help brands enter and grow across sports, music, and entertainment through licensing, NIL, sponsorships, and strategic partnerships.</p>
     </div>
     <div class="f-col"><h5>What We Do</h5><ul>
@@ -85,7 +85,7 @@ FOOTER = """<footer class="footer">
     </ul></div>
   </div>
   <div class="footer-legal"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
-  <div class="footer-base"><p>© 2026 Illinois Sponsors. All rights reserved.</p><p>Sports · Media · Sponsorship · Advisory</p></div>
+  <div class="footer-base"><p>© 2026 WERBUNG. All rights reserved.</p><p>Sports · Media · Sponsorship · Advisory</p></div>
 </footer>
 <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
   <div class="modal">
@@ -163,8 +163,8 @@ def page(path, title, desc, tier, over, h1, h1_thin, sub, stats, details, proofs
 # ═══════════════════ WHAT WE DO · MEDIA ═══════════════════
 page(
     "what-we-do/media/index.html",
-    "Media — What We Do — Illinois Sponsors",
-    "Broadcast, streaming, digital, and social media placement from Illinois Sponsors. Put your brand inside the content Illinois audiences already watch.",
+    "Media — What We Do — WERBUNG",
+    "Broadcast, streaming, digital, and social media placement from WERBUNG. Put your brand inside the content Illinois audiences already watch.",
     "Media",
     "What We Do · 01", "Media.", "Every screen that matters.",
     "We place brands inside the broadcasts, streams, and content Illinois audiences already follow, then extend that reach across social and digital so one partnership works on every screen.",
@@ -201,8 +201,8 @@ page(
 # ═══════════════════ WHAT WE DO · SPONSORSHIP ═══════════════════
 page(
     "what-we-do/sponsorship/index.html",
-    "Sponsorship — What We Do — Illinois Sponsors",
-    "Venue signage, presenting rights, and event activation from Illinois Sponsors. Own the moments Illinois fans remember.",
+    "Sponsorship — What We Do — WERBUNG",
+    "Venue signage, presenting rights, and event activation from WERBUNG. Own the moments Illinois fans remember.",
     "Sponsorship",
     "What We Do · 02", "Sponsorship.", "Own the live moment.",
     "From venue signage to presenting rights and on-site activation, sponsorship embeds your brand in the live experience of Illinois sports and entertainment.",
@@ -239,8 +239,8 @@ page(
 # ═══════════════════ WHAT WE DO · ADVISORY ═══════════════════
 page(
     "what-we-do/advisory/index.html",
-    "Advisory & Services — What We Do — Illinois Sponsors",
-    "Partnership strategy, valuation, NIL and licensing guidance, and performance reporting from Illinois Sponsors. The operating layer behind every partnership.",
+    "Advisory & Services — What We Do — WERBUNG",
+    "Partnership strategy, valuation, NIL and licensing guidance, and performance reporting from WERBUNG. The operating layer behind every partnership.",
     "Advisory",
     "What We Do · 03", "Advisory", "&amp; Services.",
     "The operating layer behind every partnership. We value inventory on real audience data, navigate NIL and licensing, manage activation, and report on outcomes.",
@@ -277,8 +277,8 @@ page(
 # ═══════════════════ WHO WE SERVE · PRO ═══════════════════
 page(
     "who-we-serve/pro/index.html",
-    "Pro — Who We Serve — Illinois Sponsors",
-    "Illinois Sponsors connects brands with professional sports properties, venues, and events across Illinois, and helps pro properties grow partnership revenue.",
+    "Pro — Who We Serve — WERBUNG",
+    "WERBUNG connects brands with professional sports properties, venues, and events across Illinois, and helps pro properties grow partnership revenue.",
     "Sponsorship",
     "Who We Serve · 01", "Pro.", "The biggest stages in Illinois.",
     "Professional sports carry the largest audiences and the strongest emotional pull in the state. We connect brands to that stage and help pro properties turn attention into partnership revenue.",
@@ -315,8 +315,8 @@ page(
 # ═══════════════════ WHO WE SERVE · COLLEGE ═══════════════════
 page(
     "who-we-serve/college/index.html",
-    "College — Who We Serve — Illinois Sponsors",
-    "Illinois Sponsors helps brands enter college sports through NIL, multimedia rights, and campus partnerships, and helps colleges grow partnership revenue.",
+    "College — Who We Serve — WERBUNG",
+    "WERBUNG helps brands enter college sports through NIL, multimedia rights, and campus partnerships, and helps colleges grow partnership revenue.",
     "Sponsorship",
     "Who We Serve · 02", "College.", "NIL, MMR, and the campus economy.",
     "College sports is where the biggest opportunity and the most complexity meet. We help brands enter through NIL, multimedia rights, and campus partnerships, with compliance handled from day one.",
@@ -353,8 +353,8 @@ page(
 # ═══════════════════ WHO WE SERVE · YOUTH ═══════════════════
 page(
     "who-we-serve/youth/index.html",
-    "Youth — Who We Serve — Illinois Sponsors",
-    "Illinois Sponsors connects brands with high school athletics and youth sports across Illinois, where community trust is built.",
+    "Youth — Who We Serve — WERBUNG",
+    "WERBUNG connects brands with high school athletics and youth sports across Illinois, where community trust is built.",
     "Sponsorship",
     "Who We Serve · 03", "Youth.", "Where community trust is built.",
     "High school and youth sports are the heartbeat of Illinois communities. Brands that show up here are not advertising to an audience, they are investing in a town, and families remember it.",
@@ -391,8 +391,8 @@ page(
 # ═══════════════════ WHO WE SERVE · BRANDS ═══════════════════
 page(
     "who-we-serve/brands/index.html",
-    "Brands — Who We Serve — Illinois Sponsors",
-    "Illinois Sponsors is the brand expansion team for companies entering sports. One partner for strategy, inventory, execution, and reporting.",
+    "Brands — Who We Serve — WERBUNG",
+    "WERBUNG is the brand expansion team for companies entering sports. One partner for strategy, inventory, execution, and reporting.",
     "general",
     "Who We Serve · 04", "Brands.", "Your way into sports.",
     "You know sports is where your audience lives. We are the team that gets you there: one partner for strategy, inventory, execution, and proof, across every level of Illinois sports.",
@@ -429,8 +429,8 @@ page(
 # ═══════════════════ ABOUT · MISSION ═══════════════════
 page(
     "about/mission/index.html",
-    "Our Mission — Illinois Sponsors",
-    "The mission of Illinois Sponsors: help brands enter and grow across sports, music, and entertainment, and help Illinois communities capture the value.",
+    "Our Mission — WERBUNG",
+    "The mission of WERBUNG: help brands enter and grow across sports, music, and entertainment, and help Illinois communities capture the value.",
     "general",
     "About · Our Mission", "Our", "Mission.",
     "We exist to help brands turn sports partnerships into real ROI, and to make sure the schools, venues, and communities of Illinois capture the value their attention creates.",
@@ -443,7 +443,7 @@ page(
     [
         detail("01 · Why We Exist", "Why We Exist",
                ["Sports is a massive economic engine, but the value flows unevenly. Brands waste budgets on partnerships that never report a result. Schools and venues undersell inventory because no one values it properly. Both sides lose.",
-                "Illinois Sponsors exists to fix that exchange: partnerships priced on real data, executed by one accountable team, and reported honestly enough to earn renewal."],
+                "WERBUNG exists to fix that exchange: partnerships priced on real data, executed by one accountable team, and reported honestly enough to earn renewal."],
                ["Fair valuation on both sides", "Measurable partnerships", "Honest reporting", "Renewal-driven incentives", "Community revenue flow", "Professional standards", "Long-term relationships", "Value that compounds"]),
         detail("02 · How We Operate", "How We Operate",
                ["We are advisory-first. Strategy precedes selling, valuation precedes pricing, and reporting closes every loop. If a partnership does not fit your goals, we say so and show you what would.",
